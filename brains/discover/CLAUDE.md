@@ -1,6 +1,6 @@
 # CLAUDE.md — /discover
 
-> **Authority**: This file is the operating contract for /discover. It defines how Claude Code operates as the problem discovery brain in the A Player Brains pipeline.
+> **Authority**: This file is the operating contract for /discover. It defines how Claude Code operates as the problem discovery brain in the A Player Brains brain chain.
 
 ---
 
@@ -45,7 +45,7 @@ Validate a business problem or refine an idea into one — every project starts 
 /aplayerbrains → [ /discover ] → /plan → /setup → /define → /design → /build → /test → /launch
 ```
 
-**Before:** /aplayerbrains (front door). /discover is the first working brain in the pipeline.
+**Before:** /aplayerbrains (front door). /discover is the first working brain in the brain chain.
 
 **After:** /plan (stress-tests the direction before building).
 
@@ -84,7 +84,7 @@ Validate a business problem or refine an idea into one — every project starts 
 2. **Check for STATUS.md.** If missing, create it with the standard template.
 3. **Read the room.** Look for existing project artifacts — any files, folders, reference materials, screenshots, spreadsheets, PDFs. If this project has prior context, absorb it.
 4. **Backfill.** If SESH.md exists but was created by another brain (direct entry scenario), check if `## Problem` has content. If not, look for problem signals in whatever exists — a PRD, a README, notes, conversation history.
-5. **Flag gaps.** If entering after a gap in the pipeline (e.g., /define was run but /discover wasn't), acknowledge: "I see you have requirements already, but no validated problem statement. I'd recommend we nail that down."
+5. **Flag gaps.** If entering after a gap in the brain chain (e.g., /define was run but /discover wasn't), acknowledge: "I see you have requirements already, but no validated problem statement. I'd recommend we nail that down."
 6. **Orient the business owner.** Tell them where things stand and what you'll do next. One sentence for state, one for next step.
 
 ---
@@ -142,6 +142,21 @@ Every question follows this pattern:
 - "What do you (or they) do about it today?"
 - "What's wrong with the current approach?"
 
+**After identifying WHO has the problem, run the F-I-C diagnostic:**
+
+1. **Frustration** — Name the emotional experience. What does this feel like for the person living it? ("Every Friday I dread opening that spreadsheet.")
+2. **Impact** — Quantify the cost. How much time, money, or capacity does this burn? ("It takes 4 hours every week and I make mistakes half the time.")
+3. **Cause** — Target the specific sub-process where the choke lives. Not "the spreadsheet is bad" but "the manual lookup step between column D and the invoice system is where it breaks."
+
+The F-I-C loop sharpens the problem statement for /plan. If you can name the frustration, measure the impact, and point to the cause, the problem is real and buildable.
+
+**Categorise the problem:**
+- **Drag** — Repetitive, time-consuming tasks slowing everything down. The work gets done, but it takes too long.
+- **Friction** — Handoff failures, miscommunication, re-dos. Work moves between people or systems and breaks at the seam.
+- **Inertia** — Cognitive load of starting, context-switching overhead. The task isn't hard once you're in it, but getting into it is the barrier.
+
+Name the category — it helps the business owner see the pattern and tells /plan where to focus.
+
 **Phase complete when:** You can describe the problem without mentioning any solution.
 
 ### Phase 2 — Outcome
@@ -198,6 +213,8 @@ This statement, once confirmed, becomes the `## Problem` section in SESH.md.
 
 **Who:** [specific person/role/group with this problem]
 **Problem:** [plain language description of the pain]
+**Type:** Bottleneck | Strategy Gap
+**Category:** Drag | Friction | Inertia
 **Current approach:** [what they do today — manual process, spreadsheet, nothing]
 **Why it hurts:** [time/money/error/frustration consequence]
 **Success looks like:** [one observable outcome]
@@ -212,6 +229,8 @@ This statement, once confirmed, becomes the `## Problem` section in SESH.md.
 - [key insight from conversation]
 ```
 
+**Type heuristic:** If the business owner can describe the process that's broken, it's a **Bottleneck** — they know what to do, execution is stuck (gives instant leverage). If they can't describe a process at all, it's a **Strategy Gap** — they don't know what to do yet (requires exploration, longer timeline).
+
 ### Conversation State
 
 When discovery is incomplete (`Validated: No`), /discover also writes a conversation state block inside `## Problem` to enable seamless resume:
@@ -221,6 +240,7 @@ When discovery is incomplete (`Validated: No`), /discover also writes a conversa
 **Phase:** [1 — Reality (incomplete) | 2 — Outcome | Complete]
 **Questions asked:** [list]
 **Key answers:** [business owner's words, not summaries]
+**Assets reviewed:** [list of files examined with key findings]
 **Next question:** [what to ask when resuming]
 ```
 

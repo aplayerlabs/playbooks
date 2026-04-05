@@ -1,6 +1,6 @@
 # CLAUDE.md — /launch
 
-> **Authority**: This file is the operating contract for /launch. It defines how Claude Code operates as the deployment brain in the A Player Brains pipeline. Project working state lives in the project's SESH.md and STATUS.md, not here.
+> **Authority**: This file is the operating contract for /launch. It defines how Claude Code operates as the deployment brain in the A Player Brains brain chain. Project working state lives in the project's SESH.md and STATUS.md, not here.
 
 ---
 
@@ -46,7 +46,7 @@ Package, version, deploy. Get the app live on the internet.
 
 **Before:** /test (verified the app works).
 
-**After:** Nothing. /launch is the end of the pipeline. The app is live.
+**After:** Nothing. /launch is the end of the brain chain. The app is live.
 
 **What it expects in SESH.md:**
 - `## Testing` section populated — ship readiness signal, bug summary
@@ -89,12 +89,12 @@ Package, version, deploy. Get the app live on the internet.
 | 11 | Git remote reachable | Can push to configured remote | Remote responds slowly | Remote unreachable or auth failed |
 | 12 | Target branch has latest code | Current work is on the deploy target branch, or target is up to date | Target branch is behind current branch by N commits | Target branch has diverged or is unreachable |
 
+**PREFLIGHT item 12 — clarification:**
+If the current branch is NOT the deploy target branch, check that the deploy target branch contains all commits from the current branch (i.e., you've merged or the target is up to date). If the target branch is behind, WARN with the commit count: "The [branch] branch is [N] commits behind your current work. You may be deploying an older version."
+
 **PREFLIGHT item 2 — failure paths:**
 - **API unreachable** → "Can't reach [platform]. Check your internet connection."
 - **Auth failed (401/403)** → "Your [platform] API key has expired or been revoked. Go to [exact URL — Render: dashboard.render.com/u/settings → API Keys] to generate a new one, then update ~/.apb/config.yaml with the new key."
-
-**PREFLIGHT item 12 — target branch behind:**
-If the target branch is behind, WARN: "The [branch] branch is [N] commits behind your current work. You may be deploying an older version. Did you mean to deploy from [current branch] instead?"
 
 **Permission:** Read SESH.md, read STATUS.md, read `deploy.json`, read `~/.apb/config.yaml`, read `bugs/open.md`, read git status. No writes during PREFLIGHT except to STATUS.md.
 
@@ -144,7 +144,7 @@ If the target branch is behind, WARN: "The [branch] branch is [N] commits behind
    - `CHANGELOG.md` — version history
    - `shipped/` — previous deployments
    - `package.json` — current version number
-5. **Backfill.** If entering directly without prior pipeline state, look for anything that indicates deployment readiness: a built app, a deploy config, a hosting account. Backfill SESH.md from whatever exists.
+5. **Backfill.** If entering directly without prior brain chain state, look for anything that indicates deployment readiness: a built app, a deploy config, a hosting account. Backfill SESH.md from whatever exists.
 6. **Flag gaps.**
    - No `deploy.json`: "No deployment configuration found. Run /setup to configure hosting."
    - No `## Testing`: "This app hasn't been tested yet. I'd strongly recommend running /test first."
@@ -167,7 +167,7 @@ When `## Deployment` in SESH.md is already populated:
 2. Offer three options:
    - **New release** — bump version, write new release notes, deploy again (default)
    - **Redeploy** — push the same version again (for infrastructure fixes)
-   - **Skip** — nothing to do, pipeline is complete
+   - **Skip** — nothing to do, brain chain is complete
 3. Default to new release. Never silently overwrite prior deployment records.
 
 ---
@@ -361,7 +361,7 @@ None
 
 ## 9. STATUS.md Contract
 
-/launch updates STATUS.md in plain English. This is the final pipeline output — what the business owner sees.
+/launch updates STATUS.md in plain English. This is the final brain chain output — what the business owner sees.
 
 **After successful deployment:**
 ```

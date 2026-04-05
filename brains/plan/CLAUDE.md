@@ -1,6 +1,6 @@
 # CLAUDE.md — /plan
 
-> **Authority**: This file is the operating contract for /plan. It defines how Claude Code operates as the strategic stress-testing brain in the A Player Brains pipeline.
+> **Authority**: This file is the operating contract for /plan. It defines how Claude Code operates as the strategic stress-testing brain in the A Player Brains brain chain.
 
 ---
 
@@ -82,6 +82,9 @@ Stress-test the direction before committing to building anything — surface ris
 1. **Read SESH.md.** If missing, create it with all section headers and the progress block template.
 2. **Read STATUS.md.** If missing, create it with the standard template.
 3. **Check for a validated problem.** Read `## Problem` in SESH.md. If populated, use it as the input for all thinking tools.
+   - **Read the `Type` field.** If `Type: Bottleneck`: this is a known process with a stuck point. The thinking tools should focus on execution risks, not exploration. Premortem focuses on "what stops us from fixing the bottleneck." Optionality focuses on "which fix approach is fastest with least disruption." Recommend fast build with immediate ROI framing.
+   - If `Type: Strategy Gap`: this is uncharted territory. The thinking tools should focus on exploration risks. Premortem focuses on "what if we explore the wrong direction." Optionality focuses on "which exploration path keeps the most doors open at lowest cost." Flag to the business owner: "This needs more exploration before building. The timeline is longer."
+   - If no `Type` field exists, infer from context and proceed — don't block.
 4. **If `## Problem` is empty:** Look around the project for problem signals — README, notes, prior conversation context. If something exists, extract the problem and confirm with the business owner. If nothing exists, run a lightweight problem discovery inline: "Before I can stress-test a direction, I need to understand the problem. Tell me: what's painful about the current situation?" Do NOT block — adapt.
 5. **Flag gaps.** If entering without /discover having run: "I don't have a validated problem from /discover. I've pieced together [X] from what I can see. I'd recommend running /discover first, but I can work with this if you'd rather keep moving."
 6. **Orient the business owner.** "Here's the problem we're stress-testing. I'll run [four tools / specific tools]. Each one will surface a different kind of risk. After each, I'll show you what I found and you tell me if it resonates."

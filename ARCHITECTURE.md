@@ -4,13 +4,15 @@ How A Player Brains works under the hood.
 
 ## Overview
 
-A Player Brains is a set of specialist AI brains, each implemented as a Claude Code skill (slash command). They share state through two files in the project directory and follow a linear pipeline from problem discovery to deployment.
+A **brain chain** is a coordinated sequence of specialist brains where each brain's output feeds the next. The A Player Brains chain runs from /discover through /launch — eight brains in order, connected through SESH.md.
+
+A Player Brains is a set of specialist AI brains, each implemented as a Claude Code skill (slash command). They share state through two files in the project directory and follow a linear brain chain from problem discovery to deployment.
 
 ```
 /aplayerbrains → /discover → /plan → /setup → /define → /design → /build → /test → /launch
 ```
 
-Three utility skills support the pipeline: /wrap (pause and resume), /status (where am I?), /upgrade (get latest brains).
+Three utility skills support the brain chain: /wrap (pause and resume), /status (where am I?), /upgrade (get latest brains).
 
 ## The two files
 
@@ -18,7 +20,7 @@ Every brain reads and writes two files in the project root:
 
 ### SESH.md (brain-to-brain contract)
 
-Structured handoff data. Each brain owns a section. Sections accumulate as the project moves through the pipeline — brains add to SESH.md, they never overwrite other brains' sections.
+Structured handoff data. Each brain owns a section. Sections accumulate as the project moves through the brain chain — brains add to SESH.md, they never overwrite other brains' sections.
 
 ```
 ## Problem          ← written by /discover
@@ -46,9 +48,9 @@ Every brain also writes a standard progress block at the bottom:
 
 Plain English. The business owner reads this. Every brain updates it with what happened and what's next. No technical jargon. No code references.
 
-**SESH.md is the source of truth for pipeline state.** STATUS.md is a human-readable projection of that state. When they conflict, SESH.md wins. If /status or /aplayerbrains detects a discrepancy, it flags: "STATUS.md says [X] but SESH.md says [Y]. SESH.md is the authority — STATUS.md may need updating."
+**SESH.md is the source of truth for brain chain state.** STATUS.md is a human-readable projection of that state. When they conflict, SESH.md wins. If /status or /aplayerbrains detects a discrepancy, it flags: "STATUS.md says [X] but SESH.md says [Y]. SESH.md is the authority — STATUS.md may need updating."
 
-Later pipeline stages add structured fields:
+Later stages add structured fields:
 - Ship readiness: RED / YELLOW / GREEN (added by /test)
 - Version and URL (added by /launch)
 
@@ -70,9 +72,9 @@ Each brain follows the same protocol:
 
 ## Direct entry
 
-Any brain can be entered directly without going through the full pipeline. When a brain is entered directly:
+Any brain can be entered directly without going through the full brain chain. When a brain is entered directly:
 
-0. If SESH.md does not exist, check git history (`git show HEAD:SESH.md`). If recoverable, restore it and notify: "SESH.md was missing but I recovered it from your last commit." If not recoverable, proceed with creation and backfill.
+0. If SESH.md does not exist, check git history (`git show HEAD:SESH.md`). If recoverable, restore it and notify: "SESH.md was missing but I recovered it from your last commit." If not recoverable (e.g., initial commit with no prior SESH.md, detached HEAD, or repository has no commits yet) -- proceed with creating a fresh SESH.md and backfilling from project artifacts.
 1. Check if SESH.md exists. If not, create it with all section headers.
 2. Look around the project for anything upstream brains would have produced — PRD, deploy.json, package.json, existing docs, running app, design files. Read what's there.
 3. Backfill SESH.md from whatever exists. If there's a PRD, extract the problem statement into `## Problem`, the scope into `## Requirements`, any design notes into `## Design`. If there's a deploy.json, populate `## Infrastructure`. If there's a running app, note it in `## Build`.
@@ -81,7 +83,7 @@ Any brain can be entered directly without going through the full pipeline. When 
 
 The pattern is: **read the room, backfill SESH.md from whatever exists, flag the gaps, keep moving.**
 
-This means the pipeline is the recommended path, but not the only path. Someone who already has a PRD can type /build directly — the brain reads the PRD, backfills SESH.md, and starts building. Someone who just wants to test an existing app can type /test directly — the brain looks at the codebase and proceeds.
+This means the brain chain is the recommended path, but not the only path. Someone who already has a PRD can type /build directly — the brain reads the PRD, backfills SESH.md, and starts building. Someone who just wants to test an existing app can type /test directly — the brain looks at the codebase and proceeds.
 
 ## Re-entry to a completed brain
 
@@ -95,7 +97,7 @@ When a brain is invoked on a project where it has already run (its SESH.md secti
 
 SESH.md must be committed to git. This means:
 - If the business owner accidentally deletes it, `git checkout SESH.md` recovers it
-- The full history of pipeline decisions is in version control
+- The full history of brain chain decisions is in version control
 - /build commits SESH.md alongside code changes
 
 STATUS.md is also git-tracked for the same reasons.
@@ -137,13 +139,13 @@ The continuation prompt includes:
 - Where work stopped
 - What's next
 
-**Backward movement:** /wrap can point to a different brain than the one that just ran. If /test finds bugs, /wrap generates a continuation prompt pointing to /build FIX. After /build fixes them, /wrap points back to /test VERIFY. The pipeline stays linear — /wrap handles direction changes.
+**Backward movement:** /wrap can point to a different brain than the one that just ran. If /test finds bugs, /wrap generates a continuation prompt pointing to /build FIX. After /build fixes them, /wrap points back to /test VERIFY. The brain chain stays linear — /wrap handles direction changes.
 
 **SESH.md always takes precedence over continuation context.** If a continuation references state that doesn't match current SESH.md, follow SESH.md.
 
 ## SESH.md accumulation
 
-Each brain owns its section and only writes to it. This prevents overwrites as the document travels the pipeline.
+Each brain owns its section and only writes to it. This prevents overwrites as the document travels the brain chain.
 
 | Brain | Section | What it writes |
 |-------|---------|----------------|
@@ -227,9 +229,50 @@ The one command the business owner needs to remember.
 
 **No SESH.md found:** "Looks like a new project. Let's start by finding the real problem." Routes to /discover.
 
-**SESH.md exists:** Reads current state, determines pipeline stage, tells user where they are, suggests next brain.
+**SESH.md exists:** Reads current state, determines brain chain stage, tells user where they are, suggests next brain.
 
 **After /wrap:** Reads continuation state, offers to resume where they left off.
+
+## The Upgrade Protocol
+
+Building a brain is half the job. The other half is getting humans to actually use it. The Upgrade Protocol is the framework for enrollment — turning a delivered brain into an adopted tool.
+
+When a business owner's app ships and their team starts using it, this is how adoption happens. It's also relevant for community brain builders — think about adoption, not just design.
+
+### Four preconditions
+
+Before showing anyone a brain, verify these four conditions. If any are missing, enrollment will fail:
+
+1. **Why** — The human understands why the brain is better than what they do today
+2. **How** — They can see how to use it without confusion
+3. **Confidence** — They feel confident they can execute
+4. **Worth** — They believe it's worth the effort
+
+### Five-part enrollment structure
+
+1. **Name the purpose** — Frame as transformation, not tool training. "This frees you to do the work that matters."
+2. **Expose the struggles** — Name the frustrations, mistakes, and missed opportunities BEFORE showing the brain. The human needs to feel the pain first.
+3. **Show the idea** — Create an irreversible mental shift. "You think [X] creates results, but it's actually [Y]."
+4. **Map the steps** — Only NOW show how. Dead simple. What to have open, first thing to do, what happens next, what "done" looks like.
+5. **Lock the action** — Remind of trigger, big idea, and how to flag issues.
+
+### First-week cadence
+
+| Day | Activity |
+|-----|----------|
+| 1 | Walkthrough |
+| 2 | Check-in |
+| 3 | Observe |
+| 4 | Refine |
+| 5 | Feedback |
+| 6-7 | Space |
+| End of week | Debrief |
+
+### The key principle
+
+"You're not being replaced. You're being upgraded."
+
+Then follow through — give harder, more interesting work. Not more admin. If the team sees the brain handling the boring stuff and their job getting better, adoption is permanent. If they see the brain as one more thing to learn with no payoff, it dies in a week.
 
 ## Brain file structure
 

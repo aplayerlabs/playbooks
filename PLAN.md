@@ -11,17 +11,17 @@ The technical-adjacent business owner. Comfortable enough with a computer to fol
 ## Guiding principles
 
 1. **Problem-first.** Whether they arrive with an idea or a problem, they leave /discover with a validated problem.
-2. **Linear pipeline.** One brain at a time, in order. No complex routing.
+2. **Linear brain chain.** One brain at a time, in order. No complex routing.
 3. **Train tracks with guard rails.** The business owner can't go wrong if they follow the sequence.
 4. **/wrap closes every loop.** Need to go back? Wrap, and the continuation prompt points to the right brain. Re-entry is always clean.
 5. **Plain English always.** Every brain produces output the business owner can read. Technical artifacts exist underneath for brain-to-brain coordination, but the human reads STATUS.md.
 6. **Opinionated defaults.** We choose the stack, the hosting, the structure. The business owner makes product decisions, not technical ones.
-7. **Every brain stands alone.** The pipeline is the recommended path, but any brain can be entered directly. If SESH.md doesn't exist, the brain creates it. If it does exist, the brain reads it and continues.
+7. **Every brain stands alone.** The brain chain is the recommended path, but any brain can be entered directly. If SESH.md doesn't exist, the brain creates it. If it does exist, the brain reads it and continues.
 8. **Everything written new.** Existing APB brains are design input. Nothing is copied.
 
 ---
 
-## The pipeline
+## The brain chain
 
 ```
 /aplayerbrains (front door — reads state, routes to the right brain)
@@ -37,13 +37,13 @@ The technical-adjacent business owner. Comfortable enough with a computer to fol
 
 ## Shipping schedule
 
-One pipeline. Built and released in phases based on dependency order:
+One brain chain. Built and released in phases based on dependency order:
 
 | Phase | Brains | Why this order |
 |-------|--------|----------------|
 | **Phase A** | Repo architecture, meta-infrastructure, /aplayerbrains, /discover, /plan, /wrap, /status, /upgrade | Foundation + front door + the thinking brains. Useful immediately. Validates audience via YouTube. |
 | **Phase B** | /setup, /define, /design | Infrastructure + requirements + visual design. These three prepare everything needed before code is written. |
-| **Phase C** | /build, /test, /launch | The building, breaking, and shipping brains. Heaviest lift. Completes the pipeline. |
+| **Phase C** | /build, /test, /launch | The building, breaking, and shipping brains. Heaviest lift. Completes the brain chain. |
 
 Each phase ships when ready. /upgrade delivers new brains to existing users.
 
@@ -69,11 +69,11 @@ Each phase ships when ready. /upgrade delivers new brains to existing users.
 | # | Task | Detail | Deliverable |
 |---|------|--------|-------------|
 | 2.1 | **Brain blueprint** | How to build a brain. Required files (SKILL.md, CLAUDE.md, USAGE.md, SPEC_CHANGELOG.md, SPEC_DECISIONS.md). Required CLAUDE.md sections. Mode design principles. Written for public brain authors — doubles as "Build Your Own Brain" guide. Reference: existing `a-player-brain-blueprint.md`. | `BRAIN-BLUEPRINT.md` |
-| 2.2 | **SESH.md spec** | Brain-to-brain handoff contract. Created by whichever brain is entered first. Updated by every brain. Structured markers: status (DONE/CONTINUING/BLOCKED/ERROR), blocker format, files changed, next-up. Regex patterns for parsing. Travels the entire pipeline from first touch. Reference: existing `progress-signaling.md`. | `PROGRESS-SIGNALING.md` + template in `project-template/` |
-| 2.3 | **STATUS.md spec** | Plain-English file the business owner reads. Every brain updates it alongside SESH.md. Contains: project name, current pipeline stage, what's been decided/built/tested, what's next, blockers in plain language. Later stages add: ship readiness (RED/YELLOW/GREEN), version, deployment status. | Template in `project-template/` + spec in `ARCHITECTURE.md` |
+| 2.2 | **SESH.md spec** | Brain-to-brain handoff contract. Created by whichever brain is entered first. Updated by every brain. Structured markers: status (DONE/CONTINUING/BLOCKED/ERROR), blocker format, files changed, next-up. Regex patterns for parsing. Travels the entire brain chain from first touch. Reference: existing `progress-signaling.md`. | `PROGRESS-SIGNALING.md` + template in `project-template/` |
+| 2.3 | **STATUS.md spec** | Plain-English file the business owner reads. Every brain updates it alongside SESH.md. Contains: project name, current brain chain stage, what's been decided/built/tested, what's next, blockers in plain language. Later stages add: ship readiness (RED/YELLOW/GREEN), version, deployment status. | Template in `project-template/` + spec in `ARCHITECTURE.md` |
 | 2.4 | **Handoff protocol** | How each brain hands forward via SESH.md. How /wrap generates continuation prompts. Rules for backward re-entry (wrap, change the brain name, paste). | Section in `ARCHITECTURE.md` |
-| 2.5 | **Direct entry protocol** | What happens when someone enters a brain directly without going through the pipeline. Every brain checks: does SESH.md exist? If yes, read it and continue. If no, create it. Does the brain have what it needs from prior stages? If no, tell the user what's missing and suggest which brain to run first — but don't block them. | Section in `ARCHITECTURE.md` |
-| 2.6 | **SESH.md accumulation spec** | What each brain writes into SESH.md so nothing gets lost or overwritten as the document travels the pipeline. Each brain owns its section. | Section in `ARCHITECTURE.md` |
+| 2.5 | **Direct entry protocol** | What happens when someone enters a brain directly without going through the brain chain. Every brain checks: does SESH.md exist? If yes, read it and continue. If no, create it. Does the brain have what it needs from prior stages? If no, tell the user what's missing and suggest which brain to run first — but don't block them. | Section in `ARCHITECTURE.md` |
+| 2.6 | **SESH.md accumulation spec** | What each brain writes into SESH.md so nothing gets lost or overwritten as the document travels the brain chain. Each brain owns its section. | Section in `ARCHITECTURE.md` |
 | 2.7 | **Config system spec** | User-local config at `~/.apb/config.yaml`. Stores: hosting platform, GitHub username/org, branch strategy, project registry. Created by /setup. Read by /define, /design, /build, /launch. Brains that run before /setup don't need it. | Spec in `ARCHITECTURE.md` |
 
 **What each brain writes to SESH.md:**
@@ -97,7 +97,7 @@ Every brain also writes the standard progress signaling block (Status, Completed
 
 *The 8 brains, plus the front door and 3 utilities. Written new. Existing APB brains are reference only.*
 
-*Every brain is pipeline-aware. It knows what comes before and after it. When entered directly without prior pipeline state, it reads the room — looks for PRDs, deploy configs, running apps, existing docs — backfills SESH.md from whatever exists, flags gaps honestly, and keeps moving. When re-entered on a project where it's already run, it offers to refine, restart, or skip. No brain blocks because upstream data is missing.*
+*Every brain is chain-aware. It knows what comes before and after it. When entered directly without prior brain chain state, it reads the room — looks for PRDs, deploy configs, running apps, existing docs — backfills SESH.md from whatever exists, flags gaps honestly, and keeps moving. When re-entered on a project where it's already run, it offers to refine, restart, or skip. No brain blocks because upstream data is missing.*
 
 ---
 
@@ -108,7 +108,7 @@ Every brain also writes the standard progress signaling block (Status, Completed
 | Aspect | Detail |
 |--------|--------|
 | **When** | Anytime. The one command the business owner needs to remember. |
-| **Behavior** | No SESH.md found → "Looks like a new project. Let's start with /discover." Kicks off /discover. SESH.md exists → reads it, determines current pipeline stage, tells the user where they are in plain English, suggests next brain. After /wrap → reads continuation state, offers to resume. |
+| **Behavior** | No SESH.md found → "Looks like a new project. Let's start with /discover." Kicks off /discover. SESH.md exists → reads it, determines current brain chain stage, tells the user where they are in plain English, suggests next brain. After /wrap → reads continuation state, offers to resume. |
 | **Output** | Routes to the appropriate brain. Updates nothing itself — it's a router, not a worker. |
 | **Edge case** | Multiple projects in different stages → asks which project, or reads cwd to determine. |
 
@@ -198,7 +198,7 @@ Every brain also writes the standard progress signaling block (Status, Completed
 | **External steps documentation** | If using Figma: creating account, installing Scripter plugin, pasting code. If using HTML previews: how to open the file in a browser. Clear instructions for each path. |
 | **Why before /build** | Building from a PRD alone risks building the wrong thing visually. The business owner needs to SEE it before code starts. Cheaper to change a mockup than refactor code. |
 | **Without Figma** | Generates HTML/CSS preview pages that open in a browser. Still visual, still reactable, no Figma needed. This is the default path for the everyman. |
-| **Direct entry** | Works standalone. Can design from a description without prior pipeline state. If SESH.md has PRD context, uses it. |
+| **Direct entry** | Works standalone. Can design from a description without prior brain chain state. If SESH.md has PRD context, uses it. |
 | **Reference** | Designer brain (DTCG pipeline, Scripter patterns). Also: the need for a non-Figma path is NEW and has no existing reference. |
 | **YouTube** | Episode 5 |
 
@@ -300,9 +300,9 @@ Every brain also writes the standard progress signaling block (Status, Completed
 | # | Task | Detail | Deliverable |
 |---|------|--------|-------------|
 | 4.1 | **GETTING-STARTED.md** | What is Claude Code, how to install, how to subscribe, what a terminal is, how to type a slash command. Written for someone who has never opened a terminal. | `GETTING-STARTED.md` |
-| 4.2 | **README.md** | What APB is, who it's for, 30-second install, the pipeline at a glance, link to YouTube. | `README.md` |
+| 4.2 | **README.md** | What APB is, who it's for, 30-second install, the brain chain at a glance, link to YouTube. | `README.md` |
 | 4.3 | **ETHOS.md** | Philosophy: business owners deserve software leverage without learning to code. Problem-first. Thinking before building. Guard rails, not blank canvases. | `ETHOS.md` |
-| 4.4 | **ARCHITECTURE.md** | How brains compose. The pipeline. SESH.md as brain-to-brain contract. STATUS.md as human dashboard. Composition, handoff, direct entry, and accumulation specs. Config system. | `ARCHITECTURE.md` |
+| 4.4 | **ARCHITECTURE.md** | How brains compose. The brain chain. SESH.md as brain-to-brain contract. STATUS.md as human dashboard. Composition, handoff, direct entry, and accumulation specs. Config system. | `ARCHITECTURE.md` |
 | 4.5 | **BRAIN-BLUEPRINT.md** | How to build your own brain. Required files, sections, mode design. The "extend APB" guide. | `BRAIN-BLUEPRINT.md` |
 | 4.6 | **SECURITY.md** | Secrets (.env), auth patterns, HTTPS, data privacy. For business owners, not engineers. | `SECURITY.md` |
 | 4.7 | **Example walkthrough** | Complete end-to-end: real problem → every brain → live app. Shows every STATUS.md, every handoff, every /wrap. | `examples/full-walkthrough/` |
@@ -338,15 +338,15 @@ Every brain also writes the standard progress signaling block (Status, Completed
 |---|------|--------------|
 | 6.1 | **Fresh install** | Clone, setup, all commands register. Under 60 seconds. |
 | 6.2 | **Front door routing** | /aplayerbrains with no state → starts /discover. With existing state → routes to correct brain. After /wrap → offers resume. |
-| 6.3 | **Full pipeline** | Real project through all 8 brains. App is live at the end. SESH.md accumulates correctly. STATUS.md readable at every stage. |
-| 6.4 | **Direct entry (every brain)** | Enter each brain directly without prior pipeline state. Each handles missing SESH.md gracefully — creates it, tells user what's missing from prior stages, doesn't block. |
-| 6.5 | **Non-technical user** | Someone who doesn't code follows Getting Started + YouTube, completes the pipeline. Note every confusion. Fix. |
+| 6.3 | **Full brain chain** | Real project through all 8 brains. App is live at the end. SESH.md accumulates correctly. STATUS.md readable at every stage. |
+| 6.4 | **Direct entry (every brain)** | Enter each brain directly without prior brain chain state. Each handles missing SESH.md gracefully — creates it, tells user what's missing from prior stages, doesn't block. |
+| 6.5 | **Non-technical user** | Someone who doesn't code follows Getting Started + YouTube, completes the brain chain. Note every confusion. Fix. |
 | 6.6 | **Wrap/re-entry** | /wrap at every stage. Continuation prompt names correct brain. New session picks up cleanly. Backward re-entry works (test→build→test). |
 | 6.7 | **/status at every stage** | Correctly reads state. Plain English. Suggests next brain. |
 | 6.8 | **Platform validation** | /setup and /launch work on Render AND Vercel. |
 | 6.9 | **Multi-session /build** | 5+ sessions with /wrap. Context preserved. STATUS.md tracks progress. |
 | 6.10 | **/upgrade** | Push update, run /upgrade, new content available. |
-| 6.11 | **SESH.md accumulation** | After full pipeline, SESH.md has all 8 brain sections populated. No section overwrites another. |
+| 6.11 | **SESH.md accumulation** | After full brain chain, SESH.md has all 8 brain sections populated. No section overwrites another. |
 | 6.12 | **External steps documentation** | /setup and /design external steps (creating accounts, installing plugins) are clear enough for a non-technical user to follow without help. |
 
 ---

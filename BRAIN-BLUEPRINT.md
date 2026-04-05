@@ -8,6 +8,32 @@ A brain is a specialist. One job, one mindset, clear inputs and outputs. It's im
 
 Brains are not code. They're operating contracts. They define what the AI should do, how it should think, what it can and can't touch, and when it should refuse.
 
+## How brains are designed
+
+Every brain in A Player Brains was designed by running the domain through six lenses from Gary Klein's Recognition-Primed Decision Making (RPM) model. When you build your own brain, use them to extract the expertise that makes it smart — not just the steps, but the thinking behind the steps.
+
+### The six lenses
+
+1. **Pattern Recognition** — What patterns does the expert see that others miss? What signals tell them "this is going well" vs "this is about to go wrong"?
+2. **Cognitive Tasks** — What mental steps do they go through? Not the physical steps, but the thinking: assess, compare, prioritise, cross-reference, infer.
+3. **Heuristics** — What rules of thumb guide their decisions? "If X, always Y." "When in doubt, Z." These are the shortcuts that make experts fast.
+4. **Situational Sensitivity** — What cues tell them the situation has changed? When do they shift approach? What triggers a different mode of thinking?
+5. **Problem Models** — How do they solve recurring problems? What's their mental playbook for common scenarios?
+6. **Instructional Design** — If teaching a complete novice, what would they teach first? What's essential vs nice-to-have?
+
+### How the lenses map to CLAUDE.md sections
+
+| Lens | Maps to |
+|------|---------|
+| Pattern Recognition | **Mindset** — what the brain values, what it watches for |
+| Heuristics | **Heuristics section** — rules of thumb that make decisions fast |
+| Situational Sensitivity | **Domain sections** with conditional behavior — "when X, shift to Y" |
+| Problem Models | **Playbooks** — reusable solutions to recurring scenarios |
+| Cognitive Tasks | **Operating modes** — distinct thinking patterns for different situations |
+| Instructional Design | **STATUS.md updates** — how the brain communicates with the business owner |
+
+The lenses are an extraction tool. Sit with the domain expert (or be the domain expert) and work through each lens. The answers become the brain's CLAUDE.md. Skip the lenses and you get a brain that follows steps. Use them and you get a brain that thinks.
+
 ## Required files
 
 Every brain lives in `brains/{brain-name}/` and contains:

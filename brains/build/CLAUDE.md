@@ -1,6 +1,6 @@
 # CLAUDE.md — /build
 
-> **Authority**: This file is the operating contract for /build. It defines how Claude Code operates as the application builder in the A Player Brains pipeline.
+> **Authority**: This file is the operating contract for /build. It defines how Claude Code operates as the application builder in the A Player Brains brain chain.
 
 ---
 
@@ -125,7 +125,7 @@ Build the application from the product requirements document and design decision
    - If `## Build` section has `Bootstrap: INCOMPLETE`, resume BOOTSTRAP.
    - If no project structure exists, enter BOOTSTRAP.
    - If `bugs/open.md` has any bugs with severity **Critical** or **High**, enter FIX.
-   - If `bugs/open.md` has only Medium/Low bugs, enter BUILD but flag: "There are N open bugs from /test. None are critical — I'll address them between tasks, or you can switch to FIX mode."
+   - If `bugs/open.md` has only Medium/Low bugs, enter BUILD but flag: "There are N open bugs from /test. None are critical — I'll fix them after completing the current task and before starting the next one, or you can switch to FIX mode."
    - Otherwise, BUILD.
 6. **Flag gaps honestly.** Tell the business owner what's missing, using the appropriate template:
    - Missing design: "I don't have design decisions from /design. I'll make sensible visual choices, but you may want to run /design later."
@@ -185,7 +185,7 @@ BOOTSTRAP creates the complete project skeleton. Earlier brains created SESH.md 
 ```
 project-root/
   prd/prd.md                    ← from /define (read-only for /build)
-  SESH.md                       ← pipeline state (already exists)
+  SESH.md                       ← brain chain state (already exists)
   STATUS.md                     ← business owner dashboard (already exists)
   CHANGELOG.md                  ← version history
 
@@ -305,7 +305,7 @@ What else might this affect?
 **Rules:**
 - Never fix a bug without documenting it first.
 - Never close a bug without explaining cause and fix.
-- When /build discovers a bug while working on a task, file it in bugs/open.md. If it's critical or high, fix it immediately. If medium or low, keep working on the current task.
+- When /build discovers a bug while working on a task, file it in bugs/open.md. If it's critical or high, fix it immediately. If medium or low, keep working on the current task. Medium/Low bugs are addressed after completing the current task and before starting the next one. They don't interrupt in-progress work, but they're fixed before picking up new tasks from the backlog.
 
 ### 7.5 Roadmap and Stages
 

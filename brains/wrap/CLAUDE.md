@@ -26,7 +26,7 @@ Gracefully close a session, capture all state into SESH.md and STATUS.md, and pr
 
 ## Pipeline Position
 
-**Position:** 0 (utility — works with any brain at any pipeline stage)
+**Position:** 0 (utility — works with any brain at any brain chain stage)
 
 **What comes before:** Whatever brain is currently active.
 
@@ -64,7 +64,7 @@ Triggered by the brain itself (or the system) when context window is running low
    - What was completed (tasks, decisions, files created/changed)
    - What's in progress (current task, where exactly work stopped)
    - What's blocked (missing info, waiting on business owner, external dependencies)
-   - What's next (remaining tasks, next pipeline step)
+   - What's next (remaining tasks, next brain chain step)
 
 ## Re-entry Protocol
 
@@ -161,7 +161,7 @@ The plan might point to a different brain than the one that just ran:
 | Situation | Point continuation at |
 |-----------|---------------------|
 | Normal mid-session pause | Same brain, same mode |
-| Brain's work is done | Next brain in pipeline |
+| Brain's work is done | Next brain in brain chain |
 | /test found bugs | /build FIX |
 | /build fixed bugs from /test | /test VERIFY |
 | Business owner needs to make a decision | Same brain, note the decision needed |
@@ -194,7 +194,7 @@ Read SESH.md in {project-path}. Enter /{brain-name} {TARGET_MODE}. Pick up from 
 - The "where we left off" must be specific enough that a fresh session can start working immediately without re-reading the entire codebase.
 - SESH.md is the source of truth across all sessions — the plan just points at it.
 
-**Fallback — across-session resume:** If the business owner closes Claude Code entirely and returns later, SESH.md has their state. They type /aplayerbrains and resume from there. The plan mechanism handles within-session context refresh. SESH.md handles across-session resume.
+**Fallback — across-session resume:** If the business owner closes Claude Code entirely and returns later, SESH.md has their state. They type /aplayerbrains, which reads SESH.md and routes them to the right brain. The plan mechanism handles within-session context refresh. SESH.md handles across-session resume.
 
 ## SESH.md Contract
 
@@ -239,15 +239,15 @@ Open Claude Code in your project folder and type /[brain]. {One sentence on what
 ## What This Brain Does NOT Do
 
 - Continue working on the current task (it captures state, it doesn't advance it)
-- Make pipeline decisions (it recommends the next brain, the user decides)
+- Make brain chain decisions (it recommends the next brain, the user decides)
 - Create project files (only SESH.md and STATUS.md)
-- Run tests, build code, or do any pipeline brain's work
+- Run tests, build code, or do any brain chain brain's work
 - Set Status to DONE (that's the active brain's job when its work is complete)
 
 ## Refusal Conditions
 
 - User asks /wrap to finish a task before wrapping — "Let me capture where we are first. You can finish that in the next session."
-- User asks /wrap to skip ahead in the pipeline — "I save state, I don't advance it. Run /aplayerbrains to figure out what's next."
+- User asks /wrap to skip ahead in the brain chain — "I save state, I don't advance it. Run /aplayerbrains to figure out what's next."
 - No active session to wrap (SESH.md shows DONE with nothing in progress) — "Nothing to wrap. Your last session completed cleanly. Run /aplayerbrains to see what's next."
 
 ## Auto-wrap Trigger
