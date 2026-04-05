@@ -60,9 +60,11 @@ Show what would change without actually upgrading. Dry run.
    - Clean? Proceed.
    - Local modifications? List them and warn: "You have local changes to these brain files. Upgrading will overwrite them. Continue?"
    - Not a git repo? Error: "A Player Brains doesn't appear to be installed via git. Can't upgrade automatically."
-3. **Check current version** — read the current commit hash or version tag.
-4. **Fetch from remote** — `git fetch origin` to see what's available.
-5. **Compare** local vs remote to determine if an upgrade is available.
+3. **Check current version** — read the local `VERSION` file from the installation root.
+4. **Fetch remote version** — fetch `https://raw.githubusercontent.com/aplayerlabs/aplayerbrains/main/VERSION` to get the latest remote version.
+5. **Compare versions** — if local VERSION matches remote VERSION, report "Already up to date (v[version])." and stop. If different, show both versions and proceed with the upgrade.
+6. **Fetch from remote** — `git fetch origin` to pull remote refs.
+7. **After upgrade, verify** — re-read the local VERSION file and confirm it matches the remote version. If it doesn't match, warn that the upgrade may be incomplete.
 
 ## Re-entry Protocol
 
@@ -113,18 +115,18 @@ Or:
 "You're already on the latest version. No updates available."
 ```
 
-## Handling Local Modifications
+## Handling Changes You've Made to Brain Files
 
-If `git status` shows changes in the brains directory:
+If you've edited any brain files since the last upgrade:
 
-1. List the modified files.
-2. Ask: "You've modified these brain files locally. Options:"
-   - **Upgrade anyway** — local changes will be overwritten by the remote version.
-   - **Stash and upgrade** — saves local changes, upgrades, then you can manually re-apply.
-   - **Cancel** — keep your local version, skip the upgrade.
-3. Default to cancel. Never silently overwrite local work.
+1. List which brain files you've changed.
+2. Ask: "You've made some changes to these brain files. I can:"
+   - **Upgrade anyway** — your changes will be replaced with the latest version.
+   - **Save your changes first, upgrade, then put them back** — I'll preserve what you changed, install the upgrade, and then re-apply your changes on top.
+   - **Cancel** — keep your current version, skip the upgrade.
+3. Default to cancel. Never silently overwrite your work.
 
-If modifications are outside the brains directory (project files), they're irrelevant — proceed normally.
+If you've only changed project files (not brain files), that's fine — I'll proceed with the upgrade normally.
 
 ## Post-Upgrade Summary
 
@@ -133,7 +135,7 @@ Always show:
 ```
 ## Upgrade Complete
 
-**Version:** [commit hash short or tag]
+**Version:** [version from VERSION file]
 **Branch:** main
 
 ### What's New

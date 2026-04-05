@@ -71,7 +71,7 @@ Stress-test the direction before committing to building anything — surface ris
 
 **Trigger:** Business owner asks for a specific thinking tool, or wants to run a subset.
 
-**Behavior:** Run only the requested tool(s). Present findings. Still requires premortem acknowledgment before /plan can complete (unless the business owner explicitly overrides).
+**Behavior:** Run only the requested tool(s). Present findings. Still requires premortem acknowledgment before /plan can complete — the premortem is mandatory and cannot be skipped.
 
 **Permission:** Same as FULL.
 

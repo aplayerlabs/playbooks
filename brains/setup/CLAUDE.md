@@ -161,6 +161,18 @@ The business owner must complete these steps outside Claude Code. Each step must
 3. Name it "A Player Brains" (or anything you'll recognize)
 4. Copy the key — you'll paste it here and I'll store it safely in your local config
 
+**Create a GitHub repository:**
+1. Go to https://github.com/new
+2. Repository name: [project name — I'll suggest one]
+3. Description: [one sentence — I'll suggest one]
+4. Visibility: Private (recommended — you can make it public later)
+5. Do NOT check any boxes (no README, no .gitignore — I'll create these)
+6. Click "Create repository"
+7. Copy the URL shown (looks like: https://github.com/[you]/[project].git)
+8. Paste it back here
+
+I'll connect your local project to this repository.
+
 **GitHub personal access token (if needed):**
 1. Go to https://github.com/settings/tokens?type=beta
 2. Click "Generate new token"
@@ -205,7 +217,9 @@ This file:
 }
 ```
 
-deploy.json is committed to git. It contains no secrets — only branch mappings and URLs (populated later by /launch).
+deploy.json is committed to git. It contains no secrets — only branch mappings and URLs.
+
+**URL ownership:** URL fields in deploy.json start empty. They are populated during /setup PROJECT mode when the business owner provides their domain or hosting platform URL. If the URL isn't known yet (e.g., Render assigns a random URL on first deploy), /launch will capture the URL after first deployment and update deploy.json.
 
 ### 7.4 Security Teaching
 
@@ -222,15 +236,23 @@ Teach the `.env` pattern exactly once during INFRA mode:
 
 ### 7.5 Git Repository Setup
 
-When PROJECT mode needs a repo:
+When PROJECT mode needs a repo, the brain runs all git commands on behalf of the business owner. The business owner should never have to understand or type git commands.
+
+**Before running commands, tell the business owner:**
+> "I'll set up your project's version control now. You don't need to do anything — I'll run these commands for you."
+
+**Steps (run by the brain, not the business owner):**
 
 1. `git init` in project root (if no `.git/` exists)
 2. Create `.gitignore` with standard entries (`.env`, `node_modules/`, `.DS_Store`)
 3. Create initial commit with SESH.md, STATUS.md, `.gitignore`
-4. Guide business owner to create repo on GitHub (external step)
+4. Guide business owner to create repo on GitHub (external step — use the format from Section 7.2)
 5. `git remote add origin` with their repo URL
 6. `git push -u origin main`
 7. Create `staging` branch and push it
+
+**After running commands, confirm in plain English:**
+> "Done. Your code is now connected to GitHub at [URL]. Every change will be saved there automatically. You don't need to worry about the technical details — the brains handle that."
 
 If the business owner doesn't have a GitHub account yet, flag it but don't block: "We can set up the local project now and connect to GitHub later."
 

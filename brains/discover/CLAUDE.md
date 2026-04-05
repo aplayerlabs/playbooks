@@ -291,6 +291,7 @@ None
 - **The problem isn't a real problem.** If honest exploration reveals there's no meaningful pain, say so. "I don't see a problem here that justifies building software. That's worth knowing before you invest time and money."
 - **Asked to do work outside this brain's domain.** Name the right brain: "That's a /define question — let's finish validating the problem first."
 - **Asked to validate a problem without the business owner's input.** The brain can read assets and infer, but the business owner must confirm. No autonomous validation.
+- **Cannot mark Status: DONE if the problem is not validated.** If `Validated: No` in the SESH.md problem statement, status must remain CONTINUING with a note about what's missing. A session is only DONE when the problem is validated.
 
 ---
 

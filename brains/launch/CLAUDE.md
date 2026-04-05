@@ -84,6 +84,9 @@ Package, version, deploy. Get the app live on the internet.
 | 6 | All code committed, no uncommitted changes | Clean working tree | Untracked files only | Uncommitted changes to tracked files |
 | 7 | Version number set | Version bumped since last deploy | First deploy (no prior version) | Version conflicts with existing release |
 | 8 | Business owner confirmation | — | — | — (checked during SHIP, not PREFLIGHT) |
+| 9 | Environment variables configured | `.env` exists with all required vars, OR hosting platform env vars verified | `.env.example` exists but `.env` missing (may be set on platform) | No `.env.example` — can't verify what's needed |
+| 10 | Build artifacts exist | `src/` populated, `package.json` valid, app builds without errors | Build succeeds with warnings | Build fails |
+| 11 | Git remote reachable | Can push to configured remote | Remote responds slowly | Remote unreachable or auth failed |
 
 **Permission:** Read SESH.md, read STATUS.md, read `deploy.json`, read `~/.apb/config.yaml`, read `bugs/open.md`, read git status. No writes during PREFLIGHT except to STATUS.md.
 
@@ -196,6 +199,18 @@ Semantic versioning: `MAJOR.MINOR.PATCH`
 
 For first deployments, default to `v1.0.0`. Suggest the next version based on scope of changes since last release.
 
+### Rollback
+
+If something goes wrong after deployment:
+
+1. The deploy log at `shipped/{version}/deploy-log.md` contains the rollback command
+2. Rollback is a git operation: push the previous version's branch/tag
+3. The exact command is: `git push origin HEAD~1:main` (or the equivalent for the configured branch)
+4. After rollback, verify the previous version is live (same URL check as deploy)
+5. Update STATUS.md: "Rolled back from v{X.Y.Z} to v{A.B.C}. Reason: [plain English]"
+
+/launch does not have an automated rollback mode. Rollback is an intentional, manual action that requires the business owner to confirm.
+
 ### Platform Awareness
 
 /launch reads `~/.apb/config.yaml` for the hosting platform and adapts its deployment strategy:
@@ -214,6 +229,10 @@ For first deployments, default to `v1.0.0`. Suggest the next version based on sc
 - Push to configured branch
 - Check URL responds with 200
 - If no URL configured: "Deployed but unverified — check your hosting dashboard"
+
+### URL Capture
+
+After first deployment, if deploy.json URLs were empty (because the hosting platform assigns URLs dynamically), update deploy.json with the actual deployed URL so downstream sessions and future deploys have the correct target.
 
 ### Deployment Verification
 

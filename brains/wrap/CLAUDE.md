@@ -222,11 +222,16 @@ Read SESH.md first. Status: CONTINUING.
 
 ## STATUS.md Contract
 
+**Status descriptor guidance:**
+- If the brain's work completed for this stage: "{Stage name} — complete"
+- If wrapping mid-session with more work to do: "{Stage name} — in progress, paused"
+- If blocked: "{Stage name} — blocked: {reason}"
+
 ```markdown
 # Project Status
 
 ## Current Stage
-{Stage name} — paused
+{Stage name} — {descriptor from guidance above}
 
 ## What's Done
 {Cumulative plain English summary}

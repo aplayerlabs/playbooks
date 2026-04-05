@@ -277,26 +277,30 @@ HTML mockups | Figma design
 
 ### Design System
 **Colors:**
-- Primary: [hex]
-- Secondary: [hex]
-- Accent: [hex]
-- Background: [hex]
-- Surface: [hex]
-- Text primary: [hex]
-- Text secondary: [hex]
-- Border: [hex]
-- Error: [hex]
-- Success: [hex]
+- Primary: [hex] — use as: bg, buttons, links
+- Secondary: [hex] — use as: accents, hover states
+- Accent: [hex] — use as: highlights, badges, CTAs
+- Background: [hex] — use as: page background
+- Surface: [hex] — use as: cards, modals, elevated containers
+- Text primary: [hex] — use as: headings, body text
+- Text secondary: [hex] — use as: labels, captions, muted text
+- Border: [hex] — use as: dividers, input borders, card outlines
+- Error: [hex] — use as: validation errors, destructive actions
+- Success: [hex] — use as: confirmations, positive states
 
 **Typography:**
-- Font family: [name]
-- Heading: [size/weight]
-- Body: [size/weight]
-- Small: [size/weight]
+- Font family: [name] (Google Fonts / system)
+- Headings: [font-size/line-height/weight] for h1, h2, h3
+- Body: [font-size/line-height/weight]
+- Small: [font-size/line-height/weight]
 
-**Spacing:** [base unit] grid — xs [N], sm [N], md [N], lg [N], xl [N]
+**Spacing:**
+- Base unit: [N]px
+- Scale: xs=[N], sm=[N], md=[N], lg=[N], xl=[N]
 
-**Border radius:** sm [N], md [N], lg [N]
+**Border radius:** [values with usage: cards, buttons, inputs]
+
+**Implementation:** Tailwind config values OR CSS custom properties (specify which)
 
 ### Screens Mocked Up
 - [screen name] — [file path or Figma page]

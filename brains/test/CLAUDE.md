@@ -179,9 +179,10 @@ When a bug is found, document in `bugs/open.md`:
 ```markdown
 ## BUG-XXX: [One-line summary]
 
-**Severity:** Critical / High / Medium / Low
+**Severity:** Critical | High | Medium | Low
+**Status:** Open | Investigating | Resolved
 **Found:** [YYYY-MM-DD]
-**Mode:** HUNT / VERIFY / REGRESS / EDGE
+**Found by:** /test [MODE]
 
 ### Steps to Reproduce
 1. [Step]
@@ -199,6 +200,15 @@ Screenshots, error messages, console output, logs.
 
 ### Blast Radius
 What else might this affect?
+
+### Root Cause
+[Added by /build when investigating/resolving]
+
+### Fix
+[Added by /build when resolving]
+
+### Regression Risk
+[Added by /build when resolving]
 ```
 
 ### Severity Definitions
@@ -230,17 +240,35 @@ Confidence levels:
 - **LOW** — Barely tested, surface-level only.
 - **UNTESTED** — Haven't touched it.
 
+### Requirements Coverage Tracking
+
+For each requirement in `requirements/stage-0.md`, /test tracks whether it has been verified and at what confidence level. This drives the ship readiness signal's coverage thresholds (80% for GREEN, 50% minimum to avoid RED).
+
+```markdown
+**Requirements Coverage:**
+| Requirement | Verified | Confidence | Notes |
+|-------------|----------|------------|-------|
+| REQ-001: [description] | Yes | HIGH | Tested happy path + edges |
+| REQ-002: [description] | Yes | MEDIUM | Happy path only |
+| REQ-003: [description] | No | UNTESTED | Not yet reached |
+
+**Coverage:** 2/3 requirements verified (67%)
+```
+
+Include this table in the `## Testing` section of SESH.md alongside the feature-level coverage checklist. The requirements coverage determines the percentage used in ship readiness evaluation.
+
 ### Executive Summary
 
 Every /test session ends with a plain-English executive summary. This is the most important output — the business owner reads this to decide whether to ship.
 
 **Ship readiness signal:**
 
-| Signal | Meaning | Criteria |
-|--------|---------|----------|
-| **GREEN** | Ready to ship | No critical or high bugs. All core flows tested at HIGH confidence. No major gaps in coverage. |
-| **YELLOW** | Ship with caution | Medium bugs exist. Some paths untested. No critical/high bugs, but coverage has gaps. |
-| **RED** | Do not ship | Critical or high bugs exist. Core flows broken. Shipping would hurt users. |
+| Signal | Criteria |
+|--------|----------|
+| **GREEN** | No critical/high bugs. Core flows tested at HIGH confidence. 80%+ of Stage 0 requirements verified. No major coverage gaps. |
+| **YELLOW** | No critical/high bugs, but: medium bugs exist, OR some paths untested, OR coverage below 80%. Shippable with acknowledged risks. |
+| **RED** | Critical or high bugs exist. OR core flows broken. OR less than 50% of requirements tested. Blocks shipping. |
+| **UNTESTED** | /test hasn't run yet, or testing just started. No confidence data. Cannot ship. |
 
 The executive summary goes in STATUS.md and reads like this:
 

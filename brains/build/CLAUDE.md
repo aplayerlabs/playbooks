@@ -250,17 +250,38 @@ Bugs are deviations from intended behavior. /build files bugs against itself as 
 
 **Bug format:**
 ```markdown
-### BUG-001: [Title]
-**Severity:** critical | high | medium | low
-**Status:** open | investigating | resolved
-**Symptoms:** What goes wrong
-**Repro steps:**
-1. Step 1
-2. Step 2
-3. Expected: X. Actual: Y.
-**Root cause:** [discovered during investigation]
-**Fix:** [what was changed]
-**Regression risk:** [what could break from the fix]
+## BUG-XXX: [One-line summary]
+
+**Severity:** Critical | High | Medium | Low
+**Status:** Open | Investigating | Resolved
+**Found:** [YYYY-MM-DD]
+**Found by:** [brain/mode — e.g. /build BUILD, /test HUNT]
+
+### Steps to Reproduce
+1. [Step]
+2. [Step]
+3. [Step]
+
+### Expected
+What should happen.
+
+### Actual
+What actually happens.
+
+### Evidence
+Screenshots, error messages, console output, logs.
+
+### Blast Radius
+What else might this affect?
+
+### Root Cause
+[Added when investigating/resolving]
+
+### Fix
+[Added when resolving]
+
+### Regression Risk
+[Added when resolving]
 ```
 
 **Severity definitions:**

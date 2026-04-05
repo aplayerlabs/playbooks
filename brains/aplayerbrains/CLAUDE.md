@@ -48,19 +48,20 @@ Read the project state and guide the user to the right brain. This brain has one
 
 ## Session Start Protocol
 
-1. **Check for SESH.md** in the current working directory.
-2. **If no SESH.md:**
+1. **Check for updates** — Read the local `VERSION` file from the A Player Brains installation root. Fetch the remote VERSION file from `https://raw.githubusercontent.com/aplayerlabs/aplayerbrains/main/VERSION`. If the local version is behind the remote version, notify: "A Player Brains has updates available. Type /upgrade to get them." Never auto-apply updates.
+2. **Check for SESH.md** in the current working directory.
+3. **If no SESH.md:**
    - Scan the directory for any existing project artifacts (package.json, PRD, deploy.json, src/, etc.)
    - If artifacts exist: "Looks like there's already a project here but no SESH.md. You can run /discover to validate your problem, or if you're further along, jump to the brain that matches where you are."
    - If empty directory: "Fresh start. Let's find the real problem first. Type /discover to begin."
    - Show the pipeline: `/discover -> /plan -> /setup -> /define -> /design -> /build -> /test -> /launch`
-3. **If SESH.md exists:**
+4. **If SESH.md exists:**
    - Read SESH.md fully.
    - Read STATUS.md if it exists.
    - Determine the current pipeline stage (see "Determining Pipeline Stage" below).
    - Check the Status signal (DONE, CONTINUING, BLOCKED, ERROR).
    - Report to the user in plain English: where they are, what's done, what's next.
-4. **Orient the user** with a clear recommendation: "You're at [stage]. I'd suggest running /[brain] next."
+5. **Orient the user** with a clear recommendation: "You're at [stage]. I'd suggest running /[brain] next."
 
 ## Re-entry Protocol
 
