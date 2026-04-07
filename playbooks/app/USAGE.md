@@ -1,4 +1,4 @@
-# /playbooks — Usage
+# /app — Usage
 
 ## Where it lives
 
@@ -16,7 +16,7 @@ Do not copy these files into your project. The skill system reads them from the 
 ## How to invoke
 
 ```
-/playbooks
+/app
 ```
 
 Or say: "start", "what should I do", "a player playbooks"

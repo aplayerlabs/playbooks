@@ -59,7 +59,7 @@ If at any point the spec is ambiguous, missing guidance, contradicts itself, or 
 
 ## Stage-by-stage verification checklist
 
-### Stage 1: /playbooks (router)
+### Stage 1: /app (router)
 Spec: `playbooks/playbooks/CLAUDE.md`
 - No SESH.md exists → should detect fresh project
 - Should route to /discover

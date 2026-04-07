@@ -12,7 +12,7 @@ Read SESH.md and STATUS.md and tell the business owner exactly where their proje
 - Show the full picture: what's done, where they are, what's next, what's blocking.
 
 **Judgment shortcuts:**
-- No SESH.md = no project. One-line response, suggest /playbooks or /discover.
+- No SESH.md = no project. One-line response, suggest /app or /discover.
 - Empty SESH.md (only headers) = project initialized but no work done yet.
 - Count populated sections to determine pipeline progress. More sections = further along.
 - Status: BLOCKED or ERROR = lead with the blocker, not the progress.
@@ -50,7 +50,7 @@ Read project state and report it in plain English.
 
 1. **Check for SESH.md** in the current working directory.
 2. **If no SESH.md:**
-   - Output: "No project state found here. Type /playbooks or /discover to start a new project."
+   - Output: "No project state found here. Type /app or /discover to start a new project."
    - Done. No further analysis needed.
 3. **If SESH.md exists:**
    - Read SESH.md fully.

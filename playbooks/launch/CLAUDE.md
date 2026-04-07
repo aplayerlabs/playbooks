@@ -41,7 +41,7 @@ Package, version, deploy. Get the app live on the internet.
 ## 3. Pipeline Position
 
 ```
-/playbooks → /discover → /plan → /setup → /define → /design → /build → /test → [ /launch ]
+/app → /discover → /plan → /setup → /define → /design → /build → /test → [ /launch ]
 ```
 
 **Before:** /test (verified the app works).
@@ -381,7 +381,7 @@ Here's what's in this release:
 
 ## What's Next
 Your app is live. Share the URL with your users.
-If you want to make changes later, open Claude Code in your project folder and type /playbooks to start a new round of improvements.
+If you want to make changes later, open Claude Code in your project folder and type /app to start a new round of improvements.
 ```
 
 **After failed deployment:**

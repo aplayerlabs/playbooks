@@ -106,4 +106,4 @@ If you run /launch on a project that's already been deployed:
 ... → /test → [ /launch ]
 ```
 
-/launch is the final playbook. After it runs, your app is live. To make changes later, start a new cycle through the pipeline with /playbooks.
+/launch is the final playbook. After it runs, your app is live. To make changes later, start a new cycle through the pipeline with /app.

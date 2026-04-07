@@ -12,7 +12,7 @@ SKILLS_DIR="${HOME}/.claude/skills"
 
 # The playbooks to register (order = chain sequence)
 PLAYBOOKS=(
-  playbooks
+  app
   discover
   plan
   setup
@@ -122,7 +122,7 @@ echo ""
 echo "  Skill Chain"
 echo "  ==========="
 echo ""
-echo "  /playbooks  → Start here (routes to the right playbook)"
+echo "  /app        → Start here (routes to the right skill)"
 echo "        │"
 echo "  /discover        → Validate problem / refine idea"
 echo "        │"
@@ -146,5 +146,5 @@ echo "  Utilities:"
 echo "  /status          → See where you are"
 echo "  /upgrade         → Get the latest playbooks"
 echo ""
-echo "  Type /playbooks in Claude Code to start."
+echo "  Type /app in Claude Code to start."
 echo ""

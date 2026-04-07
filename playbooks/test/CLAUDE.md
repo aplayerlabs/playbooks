@@ -41,7 +41,7 @@ Break the application. Find every bug before users do. Report honestly. Never fi
 ## 3. Pipeline Position
 
 ```
-/playbooks → /discover → /plan → /setup → /define → /design → /build → [ /test ] → /launch
+/app → /discover → /plan → /setup → /define → /design → /build → [ /test ] → /launch
 ```
 
 **Before:** /build (wrote the code).

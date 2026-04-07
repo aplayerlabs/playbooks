@@ -31,7 +31,7 @@ allowed-tools:                      # Claude Code tools this playbook may use
 | `name` | Yes | string | Slash command name. Lowercase, hyphens for spaces. |
 | `version` | Yes | string | Semantic version (MAJOR.MINOR.PATCH). |
 | `description` | Yes | string | One sentence. Business-owner language. No jargon. Shown when Claude Code lists available skills. |
-| `position-in-pipeline` | Yes | integer | Pipeline order (1-8) or 0 for utilities. Used by /playbooks to determine sequence. |
+| `position-in-pipeline` | Yes | integer | Pipeline order (1-8) or 0 for utilities. Used by /app to determine sequence. |
 | `voice-triggers` | No | list | Alternate phrases that should trigger this playbook. For speech-to-text users. |
 | `allowed-tools` | No | list | Claude Code tools the playbook is allowed to use. Omit for all tools. |
 
@@ -39,7 +39,7 @@ allowed-tools:                      # Claude Code tools this playbook may use
 
 | Position | Playbook |
 |----------|-------|
-| 0 | Utilities: /wrap, /status, /upgrade, /playbooks |
+| 0 | Utilities: /wrap, /status, /upgrade, /app |
 | 1 | /discover |
 | 2 | /plan |
 | 3 | /setup |

@@ -50,7 +50,7 @@ You should see a confirmation that the playbooks are installed.
 Type:
 
 ```
-/playbooks
+/app
 ```
 
 That's it. The playbook will ask you about your problem or idea and guide you from there.
@@ -69,7 +69,7 @@ You don't need any of these right now. /setup handles it when the time comes.
 
 | Command | What it does |
 |---------|-------------|
-| `/playbooks` | Start here. Routes you to the right playbook. |
+| `/app` | Start here. Routes you to the right playbook. |
 | `/wrap` | Pause your session. Pick up later exactly where you left off. |
 | `/status` | See where you are in the pipeline and what's next. |
 | `/upgrade` | Get the latest playbooks and improvements. |
@@ -87,7 +87,7 @@ Your project will move through these playbooks in order:
 7. **/test** — Break it on purpose
 8. **/launch** — Go live
 
-You don't need to memorize these. `/playbooks` always knows where you are and what's next.
+You don't need to memorize these. `/app` always knows where you are and what's next.
 
 ## Tips
 
@@ -102,7 +102,7 @@ When you come back after a break:
 
 1. Open Claude Code
 2. Navigate to your project folder
-3. Type `/playbooks`
+3. Type `/app`
 
 That's it. The system reads your project state and tells you where you left off and what to do next. Your progress is always saved in your project files.
 

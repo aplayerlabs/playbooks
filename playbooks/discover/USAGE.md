@@ -78,7 +78,7 @@ If you run /discover on a project that already has a validated problem:
 ## How it connects to the pipeline
 
 ```
-/playbooks → [ /discover ] → /plan → ...
+/app → [ /discover ] → /plan → ...
 ```
 
 /discover is the first skill. It creates the project state files (SESH.md, STATUS.md) that every other skill reads and builds on.

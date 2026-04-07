@@ -41,7 +41,7 @@ Stress-test the direction before committing to building anything — surface ris
 ## 3. Pipeline Position
 
 ```
-/playbooks → /discover → [ /plan ] → /setup → /define → /design → /build → /test → /launch
+/app → /discover → [ /plan ] → /setup → /define → /design → /build → /test → /launch
 ```
 
 **Before:** /discover (validated problem statement).

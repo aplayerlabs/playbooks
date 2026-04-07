@@ -45,7 +45,7 @@ What's Updated:
 - /build v1.2.0 — added HOTFIX mode for production patches
 - /design v1.1.0 — added FIGMA mode for Figma integration
 
-You're on the latest version. Run /status or /playbooks to continue your project.
+You're on the latest version. Run /status or /app to continue your project.
 ```
 
 ### CHECK

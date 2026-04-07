@@ -92,7 +92,7 @@ isDone = (status === "DONE") AND (no items in "Next Up" or "Next Up" says "None"
 
 This dual check prevents false positives where status says DONE but there's still listed work.
 
-Every playbook must verify this condition before writing `Status: DONE`. If Next Up has items, use `Status: CONTINUING` instead. The diagnostic playbooks (/playbooks and /status) must verify this condition when reading `Status: DONE` — if Next Up has items, flag the contradiction.
+Every playbook must verify this condition before writing `Status: DONE`. If Next Up has items, use `Status: CONTINUING` instead. The diagnostic playbooks (/app and /status) must verify this condition when reading `Status: DONE` — if Next Up has items, flag the contradiction.
 
 ## Anti-patterns
 

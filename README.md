@@ -20,7 +20,7 @@ A complete **problem-to-app playbook** — eight skills that take a non-technica
 ### The included skill chain
 
 ```
-/playbooks    Start here. Reads your project state and routes you to the right skill.
+/app    Start here. Reads your project state and routes you to the right skill.
       |
 /discover         Validate your problem (or refine your idea into one)
       |
@@ -58,7 +58,7 @@ git clone https://github.com/aplayerlabs/playbooks.git ~/.claude/skills/playbook
 cd ~/.claude/skills/playbooks && ./setup
 ```
 
-Then open Claude Code and type `/playbooks`.
+Then open Claude Code and type `/app`.
 
 ## How it works
 

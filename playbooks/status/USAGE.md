@@ -27,7 +27,7 @@ The skill reads your project's SESH.md and STATUS.md and gives you a plain Engli
 
 **No project found:**
 ```
-No project state found here. Type /playbooks or /discover to start a new project.
+No project state found here. Type /app or /discover to start a new project.
 ```
 
 **Project in progress:**
@@ -74,4 +74,4 @@ One mode: STATUS. It reads and reports. That's it.
 
 /status is a window into your project. It reads everything, writes nothing. Use it any time you want to know where things stand before deciding what to do next.
 
-Works well paired with /playbooks — /status tells you where you are, /playbooks tells you where to go.
+Works well paired with /app — /status tells you where you are, /app tells you where to go.

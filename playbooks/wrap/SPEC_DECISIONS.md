@@ -13,7 +13,7 @@
 ## WD-003: Plan-mode continuation over copy-paste prompts
 **Date:** 2026-04-06
 **Decision:** /wrap presents a Claude Code plan instead of outputting a text block for the user to copy-paste into a new session.
-**Why:** Copy-paste continuation prompts require the business owner to manually start a new session and paste text — friction that breaks flow and confuses non-technical users. A Claude Code plan leverages `showClearContextOnPlanAccept`: the user accepts the plan, context clears automatically, and execution resumes fresh with SESH.md as the source of truth. Same state preservation, zero manual steps. The plan mechanism handles within-session context refresh; SESH.md handles across-session resume (user closes Claude Code entirely, comes back later, types /playbooks).
+**Why:** Copy-paste continuation prompts require the business owner to manually start a new session and paste text — friction that breaks flow and confuses non-technical users. A Claude Code plan leverages `showClearContextOnPlanAccept`: the user accepts the plan, context clears automatically, and execution resumes fresh with SESH.md as the source of truth. Same state preservation, zero manual steps. The plan mechanism handles within-session context refresh; SESH.md handles across-session resume (user closes Claude Code entirely, comes back later, types /app).
 
 ## WD-004: /wrap never sets Status: DONE
 **Date:** 2026-04-06

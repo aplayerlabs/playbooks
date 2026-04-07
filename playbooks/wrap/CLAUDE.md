@@ -194,7 +194,7 @@ Read SESH.md in {project-path}. Enter /{skill-name} {TARGET_MODE}. Pick up from 
 - The "where we left off" must be specific enough that a fresh session can start working immediately without re-reading the entire codebase.
 - SESH.md is the source of truth across all sessions — the plan just points at it.
 
-**Fallback — across-session resume:** If the business owner closes Claude Code entirely and returns later, SESH.md has their state. They type /playbooks, which reads SESH.md and routes them to the right skill. The plan mechanism handles within-session context refresh. SESH.md handles across-session resume.
+**Fallback — across-session resume:** If the business owner closes Claude Code entirely and returns later, SESH.md has their state. They type /app, which reads SESH.md and routes them to the right skill. The plan mechanism handles within-session context refresh. SESH.md handles across-session resume.
 
 ## SESH.md Contract
 
@@ -247,8 +247,8 @@ Open Claude Code in your project folder and type /[skill]. {One sentence on what
 ## Refusal Conditions
 
 - User asks /wrap to finish a task before wrapping — "Let me capture where we are first. You can finish that in the next session."
-- User asks /wrap to skip ahead in the skill chain — "I save state, I don't advance it. Run /playbooks to figure out what's next."
-- No active session to wrap (SESH.md shows DONE with nothing in progress) — "Nothing to wrap. Your last session completed cleanly. Run /playbooks to see what's next."
+- User asks /wrap to skip ahead in the skill chain — "I save state, I don't advance it. Run /app to figure out what's next."
+- No active session to wrap (SESH.md shows DONE with nothing in progress) — "Nothing to wrap. Your last session completed cleanly. Run /app to see what's next."
 
 ## Auto-wrap Trigger
 

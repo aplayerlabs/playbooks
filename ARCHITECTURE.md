@@ -9,7 +9,7 @@ A **skill chain** is a coordinated sequence of specialist skills where each skil
 Playbooks is a set of specialist AI skills, each implemented as a Claude Code slash command. They share state through the playfield and follow a linear skill chain from problem discovery to deployment.
 
 ```
-/playbooks → /discover → /plan → /setup → /define → /design → /build → /test → /launch
+/app → /discover → /plan → /setup → /define → /design → /build → /test → /launch
 ```
 
 Three utility skills support the skill chain: /wrap (pause and resume), /status (where am I?), /upgrade (get latest playbooks).
@@ -56,7 +56,7 @@ Every skill also writes a standard progress block at the bottom:
 
 Plain English. The business owner reads this. Every skill updates it with what happened and what's next. No technical jargon. No code references.
 
-**SESH.md is the source of truth for skill chain state.** STATUS.md is a human-readable projection of that state. When they conflict, SESH.md wins. If /status or /playbooks detects a discrepancy, it flags: "STATUS.md says [X] but SESH.md says [Y]. SESH.md is the authority — STATUS.md may need updating."
+**SESH.md is the source of truth for skill chain state.** STATUS.md is a human-readable projection of that state. When they conflict, SESH.md wins. If /status or /app detects a discrepancy, it flags: "STATUS.md says [X] but SESH.md says [Y]. SESH.md is the authority — STATUS.md may need updating."
 
 ### The full playfield (after /build BOOTSTRAP)
 
@@ -247,10 +247,10 @@ Project-level deployment config lives at `deploy.json` in the project root. Also
 Skills can use other skills' thinking internally without exposing separate commands:
 
 - /plan runs premortem, inversion, bottleneck analysis, and optionality mapping as part of its process. These are thinking tools embedded in /plan, not standalone commands.
-- /playbooks reads SESH.md and routes to the appropriate skill. It's a router, not a worker — it doesn't modify project state.
+- /app reads SESH.md and routes to the appropriate skill. It's a router, not a worker — it doesn't modify project state.
 - /wrap reads the current skill's spec to list available modes in the continuation prompt.
 
-## The front door: /playbooks
+## The front door: /app
 
 The one command the business owner needs to remember.
 

@@ -42,10 +42,10 @@ Validate a business problem or refine an idea into one — every project starts 
 ## 3. Pipeline Position
 
 ```
-/playbooks → [ /discover ] → /plan → /setup → /define → /design → /build → /test → /launch
+/app → [ /discover ] → /plan → /setup → /define → /design → /build → /test → /launch
 ```
 
-**Before:** /playbooks (front door). /discover is the first working playbook in the skill chain.
+**Before:** /app (front door). /discover is the first working playbook in the skill chain.
 
 **After:** /plan (stress-tests the direction before building).
 

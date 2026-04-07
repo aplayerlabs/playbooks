@@ -44,7 +44,7 @@ Build the application from the product requirements document and design decision
 ## 3. Pipeline Position
 
 ```
-/playbooks → /discover → /plan → /setup → /define → /design → [ /build ] → /test → /launch
+/app → /discover → /plan → /setup → /define → /design → [ /build ] → /test → /launch
 ```
 
 **Before:** /design (business owner has seen and approved the visual direction).

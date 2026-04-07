@@ -24,7 +24,7 @@ The technical-adjacent business owner. Comfortable enough with a computer to fol
 ## The skill chain
 
 ```
-/playbooks (front door — reads state, routes to the right playbook)
+/app (front door — reads state, routes to the right playbook)
     ↓
 /discover → /plan → /setup → /define → /design → /build → /test → /launch
 ```
@@ -41,7 +41,7 @@ One skill chain. Built and released in phases based on dependency order:
 
 | Phase | Playbooks | Why this order |
 |-------|--------|----------------|
-| **Phase A** | Repo architecture, meta-infrastructure, /playbooks, /discover, /plan, /wrap, /status, /upgrade | Foundation + front door + the thinking playbooks. Useful immediately. Validates audience via YouTube. |
+| **Phase A** | Repo architecture, meta-infrastructure, /app, /discover, /plan, /wrap, /status, /upgrade | Foundation + front door + the thinking playbooks. Useful immediately. Validates audience via YouTube. |
 | **Phase B** | /setup, /define, /design | Infrastructure + requirements + visual design. These three prepare everything needed before code is written. |
 | **Phase C** | /build, /test, /launch | The building, breaking, and shipping playbooks. Heaviest lift. Completes the skill chain. |
 
@@ -58,7 +58,7 @@ Each phase ships when ready. /upgrade delivers new playbooks to existing users.
 | 1.1 | **Repo structure** | New public repo. Clone into `~/.claude/skills/apb`. Top-level: `setup`, `README.md`, `ARCHITECTURE.md`, `ETHOS.md`, playbook folders, `youtube/`, `examples/`. | Repo skeleton |
 | 1.2 | **Setup script** | One-command install. Registers all playbooks and utilities as slash commands. Detects host (Claude Code primary). Extensible as new playbooks ship. | `setup` executable |
 | 1.3 | **Skill file format spec** | Every playbook gets a `SKILL.md` with YAML frontmatter: name, description, voice-triggers, allowed-tools, version, position-in-pipeline. Business-owner-friendly descriptions. | `SKILL-FORMAT.md` |
-| 1.4 | **Composition spec** | How playbooks invoke each other. How /plan runs thinking tools internally. How /wrap generates continuation prompts naming the next playbook. How /playbooks reads state and routes. | Section in `ARCHITECTURE.md` |
+| 1.4 | **Composition spec** | How playbooks invoke each other. How /plan runs thinking tools internally. How /wrap generates continuation prompts naming the next playbook. How /app reads state and routes. | Section in `ARCHITECTURE.md` |
 
 ---
 
@@ -101,7 +101,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 
 ---
 
-### 3.0 — `/playbooks`
+### 3.0 — `/app`
 
 **Role:** Front door. Reads project state and routes to the right playbook.
 
@@ -283,7 +283,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 | **Role** | "Where am I?" Reads SESH.md + STATUS.md, tells the business owner in plain English: what stage they're at, what's done, what's next, any blockers. |
 | **When** | Returning after days/weeks. Forgot where things stand. |
 | **Output** | Plain English summary. Suggests which playbook to run next. |
-| **Direct entry** | Always works. If no SESH.md, says "No project state found. Start with /playbooks or /discover." |
+| **Direct entry** | Always works. If no SESH.md, says "No project state found. Start with /app or /discover." |
 
 ### `/upgrade`
 
@@ -337,7 +337,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 | # | Test | Pass criteria |
 |---|------|--------------|
 | 6.1 | **Fresh install** | Clone, setup, all commands register. Under 60 seconds. |
-| 6.2 | **Front door routing** | /playbooks with no state → starts /discover. With existing state → routes to correct playbook. After /wrap → offers resume. |
+| 6.2 | **Front door routing** | /app with no state → starts /discover. With existing state → routes to correct playbook. After /wrap → offers resume. |
 | 6.3 | **Full skill chain** | Real project through all 8 playbooks. App is live at the end. SESH.md accumulates correctly. STATUS.md readable at every stage. |
 | 6.4 | **Direct entry (every playbook)** | Enter each playbook directly without prior skill chain state. Each handles missing SESH.md gracefully — creates it, tells user what's missing from prior stages, doesn't block. |
 | 6.5 | **Non-technical user** | Someone who doesn't code follows Getting Started + YouTube, completes the skill chain. Note every confusion. Fix. |
@@ -355,7 +355,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 
 | Category | Count |
 |----------|-------|
-| Front door | 1 (/playbooks) |
+| Front door | 1 (/app) |
 | Pipeline playbooks | 8 (/discover, /plan, /setup, /define, /design, /build, /test, /launch) |
 | Utilities | 3 (/wrap, /status, /upgrade) |
 | Documentation | 7 (GETTING-STARTED, README, ETHOS, ARCHITECTURE, PLAYBOOK-BLUEPRINT, SECURITY, example walkthrough) |
@@ -371,7 +371,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 Phase 1 (Repo Architecture)         ← foundation, everything depends on this
 Phase 2 (Meta-Infrastructure)        ← protocols before playbooks
 Phase 3 (Pipeline Playbooks + Utilities) ← the product
-  Shipping phase A: /playbooks, /discover, /plan, /wrap, /status, /upgrade
+  Shipping phase A: /app, /discover, /plan, /wrap, /status, /upgrade
   Shipping phase B: /setup, /define, /design
   Shipping phase C: /build, /test, /launch
 Phase 4 (Documentation)              ← after playbooks exist

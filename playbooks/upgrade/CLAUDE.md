@@ -147,7 +147,7 @@ Always show:
 ### What's Removed
 - [Nothing, or removed skill with explanation]
 
-You're on the latest version. Run /status or /playbooks to continue your project.
+You're on the latest version. Run /status or /app to continue your project.
 ```
 
 ## SESH.md Contract

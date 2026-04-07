@@ -11,7 +11,7 @@ The front door, the thinking pipeline, and utilities. Useful immediately.
 - [x] Project templates (SESH.md, STATUS.md)
 - [x] Playbook stubs with frontmatter (all 11)
 - [ ] Setup script (functional install + slash command registration)
-- [ ] /playbooks CLAUDE.md (front door router)
+- [ ] /app CLAUDE.md (front door router)
 - [ ] /discover CLAUDE.md + USAGE.md + SPEC_CHANGELOG.md + SPEC_DECISIONS.md
 - [ ] /plan CLAUDE.md + USAGE.md + SPEC_CHANGELOG.md + SPEC_DECISIONS.md
 - [ ] /wrap CLAUDE.md + USAGE.md + SPEC_CHANGELOG.md + SPEC_DECISIONS.md
