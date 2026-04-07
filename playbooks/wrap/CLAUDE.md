@@ -26,7 +26,7 @@ Gracefully close a session, capture all state into SESH.md and STATUS.md, and pr
 
 ## Pipeline Position
 
-**Position:** 0 (utility — works with any playbook at any playbook chain stage)
+**Position:** 0 (utility — works with any playbook at any skill chain stage)
 
 **What comes before:** Whatever playbook is currently active.
 
@@ -64,7 +64,7 @@ Triggered by the playbook itself (or the system) when context window is running 
    - What was completed (tasks, decisions, files created/changed)
    - What's in progress (current task, where exactly work stopped)
    - What's blocked (missing info, waiting on business owner, external dependencies)
-   - What's next (remaining tasks, next playbook chain step)
+   - What's next (remaining tasks, next skill chain step)
 
 ## Re-entry Protocol
 
@@ -161,7 +161,7 @@ The plan might point to a different playbook than the one that just ran:
 | Situation | Point continuation at |
 |-----------|---------------------|
 | Normal mid-session pause | Same playbook, same mode |
-| Playbook's work is done | Next playbook in playbook chain |
+| Playbook's work is done | Next playbook in skill chain |
 | /test found bugs | /build FIX |
 | /build fixed bugs from /test | /test VERIFY |
 | Business owner needs to make a decision | Same playbook, note the decision needed |
@@ -239,15 +239,15 @@ Open Claude Code in your project folder and type /[playbook]. {One sentence on w
 ## What This Playbook Does NOT Do
 
 - Continue working on the current task (it captures state, it doesn't advance it)
-- Make playbook chain decisions (it recommends the next playbook, the user decides)
+- Make skill chain decisions (it recommends the next playbook, the user decides)
 - Create project files (only SESH.md and STATUS.md)
-- Run tests, build code, or do any playbook chain playbook's work
+- Run tests, build code, or do any skill chain playbook's work
 - Set Status to DONE (that's the active playbook's job when its work is complete)
 
 ## Refusal Conditions
 
 - User asks /wrap to finish a task before wrapping — "Let me capture where we are first. You can finish that in the next session."
-- User asks /wrap to skip ahead in the playbook chain — "I save state, I don't advance it. Run /playbooks to figure out what's next."
+- User asks /wrap to skip ahead in the skill chain — "I save state, I don't advance it. Run /playbooks to figure out what's next."
 - No active session to wrap (SESH.md shows DONE with nothing in progress) — "Nothing to wrap. Your last session completed cleanly. Run /playbooks to see what's next."
 
 ## Auto-wrap Trigger

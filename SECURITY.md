@@ -1,6 +1,6 @@
 # Security
 
-How A Player Playbooks handles secrets, authentication, and data privacy. Written for business owners, not security engineers.
+How Playbooks handles secrets, authentication, and data privacy. Written for business owners, not security engineers.
 
 ## The one rule
 
@@ -63,7 +63,7 @@ These aren't optional features — they're defaults. /build enforces them.
 ## Data privacy
 
 - User data stays in YOUR database on YOUR hosting account
-- A Player Playbooks never transmits your project data to third parties
+- Playbooks never transmits your project data to third parties
 - The playbooks run in Claude Code on your machine — your conversations with the playbooks are subject to Anthropic's privacy policy
 - Your source code is pushed to YOUR GitHub repository (private by default)
 

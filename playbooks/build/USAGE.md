@@ -4,7 +4,7 @@
 
 ## Location
 
-This playbook lives in the A Player Playbooks skill pack:
+This playbook lives in the Playbooks skill pack:
 
 ```
 ~/.claude/skills/apb/playbooks/build/

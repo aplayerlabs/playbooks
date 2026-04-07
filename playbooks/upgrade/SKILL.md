@@ -2,7 +2,7 @@
 name: upgrade
 version: 0.1.0
 description: |
-  Pull the latest A Player Playbooks from GitHub and show what changed.
+  Pull the latest Playbooks from GitHub and show what changed.
 position-in-pipeline: 0
 effort: "low"
 voice-triggers:

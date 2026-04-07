@@ -6,7 +6,7 @@ Show the business owner what their app will look like before code is written.
 
 ## Location
 
-`playbooks/design/` inside the A Player Playbooks skill pack.
+`playbooks/design/` inside the Playbooks skill pack.
 
 Do not copy into projects. The playbook reads from and writes to the project directory.
 

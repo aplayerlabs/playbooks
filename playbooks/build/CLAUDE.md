@@ -1,6 +1,6 @@
 # CLAUDE.md — /build
 
-> **Authority**: This file is the operating contract for /build. It defines how Claude Code operates as the application builder in the A Player Playbooks playbook chain.
+> **Authority**: This file is the operating contract for /build. It defines how Claude Code operates as the application builder in the Playbooks skill chain.
 
 ---
 

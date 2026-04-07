@@ -2,7 +2,7 @@
 name: status
 version: 0.1.0
 description: |
-  See where you are in the playbook chain and what to do next.
+  See where you are in the skill chain and what to do next.
 position-in-pipeline: 0
 effort: "low"
 model: "haiku"

@@ -1,6 +1,6 @@
 # CLAUDE.md — /discover
 
-> **Authority**: This file is the operating contract for /discover. It defines how Claude Code operates as the problem discovery playbook in the A Player Playbooks playbook chain.
+> **Authority**: This file is the operating contract for /discover. It defines how Claude Code operates as the problem discovery playbook in the Playbooks skill chain.
 
 ---
 
@@ -45,7 +45,7 @@ Validate a business problem or refine an idea into one — every project starts 
 /playbooks → [ /discover ] → /plan → /setup → /define → /design → /build → /test → /launch
 ```
 
-**Before:** /playbooks (front door). /discover is the first working playbook in the playbook chain.
+**Before:** /playbooks (front door). /discover is the first working playbook in the skill chain.
 
 **After:** /plan (stress-tests the direction before building).
 
@@ -84,7 +84,7 @@ Validate a business problem or refine an idea into one — every project starts 
 2. **Check for STATUS.md.** If missing, create it with the standard template.
 3. **Read the room.** Look for existing project artifacts — any files, folders, reference materials, screenshots, spreadsheets, PDFs. If this project has prior context, absorb it.
 4. **Backfill.** If SESH.md exists but was created by another playbook (direct entry scenario), check if `## Problem` has content. If not, look for problem signals in whatever exists — a PRD, a README, notes, conversation history.
-5. **Flag gaps.** If entering after a gap in the playbook chain (e.g., /define was run but /discover wasn't), acknowledge: "I see you have requirements already, but no validated problem statement. I'd recommend we nail that down."
+5. **Flag gaps.** If entering after a gap in the skill chain (e.g., /define was run but /discover wasn't), acknowledge: "I see you have requirements already, but no validated problem statement. I'd recommend we nail that down."
 6. **Orient the business owner.** Tell them where things stand and what you'll do next. One sentence for state, one for next step.
 
 ---

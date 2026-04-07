@@ -50,7 +50,7 @@ Set up the business owner's infrastructure (GitHub, hosting, domain) and create 
 
 ### INFRA
 
-**Purpose:** First-time-ever setup. The business owner has never used A Player Playbooks before.
+**Purpose:** First-time-ever setup. The business owner has never used Playbooks before.
 
 **Trigger:** `~/.apb/config.yaml` does not exist, or business owner says "first time" / "new setup."
 
@@ -161,7 +161,7 @@ The business owner must complete these steps outside Claude Code. Each step must
 **Render API key:**
 1. Go to https://dashboard.render.com/u/settings → API Keys
 2. Click "Create API Key"
-3. Name it "A Player Playbooks" (or anything you'll recognize)
+3. Name it "Playbooks" (or anything you'll recognize)
 4. Copy the key — you'll paste it here and I'll store it safely in your local config
 
 **Create a GitHub repository:**
@@ -179,7 +179,7 @@ I'll connect your local project to this repository.
 **GitHub personal access token (if needed):**
 1. Go to https://github.com/settings/tokens?type=beta
 2. Click "Generate new token"
-3. Name: "A Player Playbooks", Expiration: 90 days
+3. Name: "Playbooks", Expiration: 90 days
 4. Repository access: "All repositories"
 5. Permissions: Contents (read and write)
 6. Click "Generate token" and copy it

@@ -1,6 +1,6 @@
 # CLAUDE.md — /launch
 
-> **Authority**: This file is the operating contract for /launch. It defines how Claude Code operates as the deployment playbook in the A Player Playbooks playbook chain. Project working state lives in the project's SESH.md and STATUS.md, not here.
+> **Authority**: This file is the operating contract for /launch. It defines how Claude Code operates as the deployment playbook in the Playbooks skill chain. Project working state lives in the project's SESH.md and STATUS.md, not here.
 
 ---
 
@@ -46,7 +46,7 @@ Package, version, deploy. Get the app live on the internet.
 
 **Before:** /test (verified the app works).
 
-**After:** Nothing. /launch is the end of the playbook chain. The app is live.
+**After:** Nothing. /launch is the end of the skill chain. The app is live.
 
 **What it expects in SESH.md:**
 - `## Testing` section populated — ship readiness signal, bug summary
@@ -144,7 +144,7 @@ If the current branch is NOT the deploy target branch, check that the deploy tar
    - `CHANGELOG.md` — version history
    - `shipped/` — previous deployments
    - `package.json` — current version number
-5. **Backfill.** If entering directly without prior playbook chain state, look for anything that indicates deployment readiness: a built app, a deploy config, a hosting account. Backfill SESH.md from whatever exists.
+5. **Backfill.** If entering directly without prior skill chain state, look for anything that indicates deployment readiness: a built app, a deploy config, a hosting account. Backfill SESH.md from whatever exists.
 6. **Flag gaps.**
    - No `deploy.json`: "No deployment configuration found. Run /setup to configure hosting."
    - No `## Testing`: "This app hasn't been tested yet. I'd strongly recommend running /test first."
@@ -167,7 +167,7 @@ When `## Deployment` in SESH.md is already populated:
 2. Offer three options:
    - **New release** — bump version, write new release notes, deploy again (default)
    - **Redeploy** — push the same version again (for infrastructure fixes)
-   - **Skip** — nothing to do, playbook chain is complete
+   - **Skip** — nothing to do, skill chain is complete
 3. Default to new release. Never silently overwrite prior deployment records.
 
 ---
@@ -361,7 +361,7 @@ None
 
 ## 9. STATUS.md Contract
 
-/launch updates STATUS.md in plain English. This is the final playbook chain output — what the business owner sees.
+/launch updates STATUS.md in plain English. This is the final skill chain output — what the business owner sees.
 
 **After successful deployment:**
 ```

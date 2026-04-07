@@ -1,6 +1,6 @@
 # Playbook Blueprint
 
-How to build a playbook that plugs into A Player Playbooks. Use this if you want to create a custom playbook for your own domain.
+How to build a playbook that plugs into Playbooks. Use this if you want to create a custom playbook for your own domain.
 
 ## Terminology
 
@@ -17,7 +17,7 @@ Skills are not code. They're operating contracts. They define what the AI should
 
 ## How playbooks are designed
 
-Every playbook in A Player Playbooks was designed by running the domain through six lenses from Gary Klein's Recognition-Primed Decision Making (RPM) model. When you build your own playbook, use them to extract the expertise that makes it smart — not just the steps, but the thinking behind the steps.
+Every playbook in Playbooks was designed by running the domain through six lenses from Gary Klein's Recognition-Primed Decision Making (RPM) model. When you build your own playbook, use them to extract the expertise that makes it smart — not just the steps, but the thinking behind the steps.
 
 ### The six lenses
 

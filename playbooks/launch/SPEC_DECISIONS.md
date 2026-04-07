@@ -22,7 +22,7 @@
 
 **Date:** 2026-04-06
 **Decision:** /launch does not create zip packages. It pushes code via git to trigger platform deploys.
-**Why:** The reference shipper playbook created zip deliverables because clients received files. The A Player Playbooks audience deploys via git-push to hosting platforms (Render, Vercel). There's no zip to hand off — the hosting platform receives the code directly. Release notes and deploy logs are stored in `shipped/{version}/` for the record, but the deliverable is the live URL, not a file.
+**Why:** The reference shipper playbook created zip deliverables because clients received files. The Playbooks audience deploys via git-push to hosting platforms (Render, Vercel). There's no zip to hand off — the hosting platform receives the code directly. Release notes and deploy logs are stored in `shipped/{version}/` for the record, but the deliverable is the live URL, not a file.
 
 ## LD-005: Destructive action prevention as hard rules
 

@@ -1,6 +1,6 @@
 # Skill File Format
 
-Every playbook and utility in A Player Playbooks is registered as a Claude Code slash command via a `SKILL.md` file with YAML frontmatter.
+Every playbook and utility in Playbooks is registered as a Claude Code slash command via a `SKILL.md` file with YAML frontmatter.
 
 ## Frontmatter spec
 

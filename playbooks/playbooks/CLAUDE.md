@@ -48,7 +48,7 @@ Read the project state and guide the user to the right playbook. This playbook h
 
 ## Session Start Protocol
 
-1. **Check for updates** — Read the local `VERSION` file from the A Player Playbooks installation root. Fetch the remote VERSION file from `https://raw.githubusercontent.com/aplayerlabs/playbooks/main/VERSION`. If the local version is behind the remote version, notify: "A Player Playbooks has updates available. Type /upgrade to get them." Never auto-apply updates.
+1. **Check for updates** — Read the local `VERSION` file from the Playbooks installation root. Fetch the remote VERSION file from `https://raw.githubusercontent.com/aplayerlabs/playbooks/main/VERSION`. If the local version is behind the remote version, notify: "Playbooks has updates available. Type /upgrade to get them." Never auto-apply updates.
 2. **Check for SESH.md** in the current working directory.
 3. **If no SESH.md:**
    - Scan the directory for any existing project artifacts (package.json, PRD, deploy.json, src/, etc.)
@@ -108,7 +108,7 @@ If the user mentions multiple projects or seems confused about which directory t
 
 If no SESH.md exists and the directory looks empty:
 
-1. Explain A Player Playbooks in one sentence: "A Player Playbooks walks you from problem to live app through 8 specialist playbooks."
+1. Explain Playbooks in one sentence: "Playbooks walks you from problem to live app through 8 specialist skills."
 2. Show the pipeline visually.
 3. Tell them: "Type /discover to start. It takes about 15 minutes."
 4. Do NOT dump the entire architecture on them.

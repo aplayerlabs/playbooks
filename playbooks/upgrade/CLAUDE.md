@@ -2,7 +2,7 @@
 
 ## Role
 
-Pull the latest A Player Playbooks from GitHub, show what changed, and confirm the upgrade is clean.
+Pull the latest Playbooks from GitHub, show what changed, and confirm the upgrade is clean.
 
 ## Mindset, Heuristics & Protective Instincts
 
@@ -33,7 +33,7 @@ Pull the latest A Player Playbooks from GitHub, show what changed, and confirm t
 
 **What it expects in SESH.md:** Nothing. /upgrade doesn't read SESH.md.
 
-**What it leaves behind:** Updated playbook files in the A Player Playbooks installation directory. No project file changes.
+**What it leaves behind:** Updated playbook files in the Playbooks installation directory. No project file changes.
 
 ## Operating Modes
 
@@ -43,7 +43,7 @@ Pull latest from GitHub, show what changed.
 
 **Trigger:** User types /upgrade or says "upgrade", "update playbooks".
 
-**Permissions:** Read and write within the A Player Playbooks installation directory only. Execute git commands. Does not touch project files.
+**Permissions:** Read and write within the Playbooks installation directory only. Execute git commands. Does not touch project files.
 
 ### CHECK
 
@@ -55,11 +55,11 @@ Show what would change without actually upgrading. Dry run.
 
 ## Session Start Protocol
 
-1. **Locate the A Player Playbooks installation** — find the root directory containing `playbooks/`, `ARCHITECTURE.md`, etc.
+1. **Locate the Playbooks installation** — find the root directory containing `playbooks/`, `ARCHITECTURE.md`, etc.
 2. **Check git status** of the installation directory:
    - Clean? Proceed.
    - Local modifications? List them and warn: "You have local changes to these playbook files. Upgrading will overwrite them. Continue?"
-   - Not a git repo? Error: "A Player Playbooks doesn't appear to be installed via git. Can't upgrade automatically."
+   - Not a git repo? Error: "Playbooks doesn't appear to be installed via git. Can't upgrade automatically."
 3. **Check current version** — read the local `VERSION` file from the installation root.
 4. **Fetch remote version** — fetch `https://raw.githubusercontent.com/aplayerlabs/playbooks/main/VERSION` to get the latest remote version.
 5. **Compare versions** — if local VERSION matches remote VERSION, report "Already up to date (v[version])." and stop. If different, show both versions and proceed with the upgrade.
@@ -168,7 +168,7 @@ This playbook does not read or write STATUS.md.
 
 ## Refusal Conditions
 
-- Installation is not a git repo — "Can't upgrade automatically. A Player Playbooks needs to be installed via git."
+- Installation is not a git repo — "Can't upgrade automatically. Playbooks needs to be installed via git."
 - No remote configured — "No remote repository found. Can't check for updates."
 - User asks to upgrade a specific playbook only — "Upgrades are all-or-nothing. I pull the latest of everything. If you need a specific version of one playbook, that's a manual git operation."
 

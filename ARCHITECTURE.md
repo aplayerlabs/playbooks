@@ -1,18 +1,18 @@
 # Architecture
 
-How A Player Playbooks works under the hood.
+How Playbooks works under the hood.
 
 ## Overview
 
-A **playbook chain** is a coordinated sequence of specialist playbooks where each playbook's output feeds the next. The A Player Playbooks chain runs from /discover through /launch — eight playbooks in order, connected through SESH.md.
+A **skill chain** is a coordinated sequence of specialist skills where each skill's output feeds the next. The skill chain runs from /discover through /launch — eight skills in order, connected through SESH.md.
 
-A Player Playbooks is a set of specialist AI playbooks, each implemented as a Claude Code skill (slash command). They share state through two files in the project directory and follow a linear playbook chain from problem discovery to deployment.
+Playbooks is a set of specialist AI skills, each implemented as a Claude Code slash command. They share state through the playfield and follow a linear skill chain from problem discovery to deployment.
 
 ```
 /playbooks → /discover → /plan → /setup → /define → /design → /build → /test → /launch
 ```
 
-Three utility skills support the playbook chain: /wrap (pause and resume), /status (where am I?), /upgrade (get latest playbooks).
+Three utility skills support the skill chain: /wrap (pause and resume), /status (where am I?), /upgrade (get latest playbooks).
 
 ## The playfield
 
@@ -28,7 +28,7 @@ Every skill reads and writes two files in the project root:
 
 #### SESH.md (skill-to-skill contract)
 
-Structured handoff data. Each skill owns a section. Sections accumulate as the project moves through the playbook chain — skills add to SESH.md, they never overwrite other skills' sections.
+Structured handoff data. Each skill owns a section. Sections accumulate as the project moves through the skill chain — skills add to SESH.md, they never overwrite other skills' sections.
 
 ```
 ## Problem          ← written by /discover
@@ -56,7 +56,7 @@ Every playbook also writes a standard progress block at the bottom:
 
 Plain English. The business owner reads this. Every skill updates it with what happened and what's next. No technical jargon. No code references.
 
-**SESH.md is the source of truth for playbook chain state.** STATUS.md is a human-readable projection of that state. When they conflict, SESH.md wins. If /status or /playbooks detects a discrepancy, it flags: "STATUS.md says [X] but SESH.md says [Y]. SESH.md is the authority — STATUS.md may need updating."
+**SESH.md is the source of truth for skill chain state.** STATUS.md is a human-readable projection of that state. When they conflict, SESH.md wins. If /status or /playbooks detects a discrepancy, it flags: "STATUS.md says [X] but SESH.md says [Y]. SESH.md is the authority — STATUS.md may need updating."
 
 ### The full playfield (after /build BOOTSTRAP)
 
@@ -99,7 +99,7 @@ Each skill follows the same protocol:
 
 ## Direct entry
 
-Any playbook can be entered directly without going through the full playbook chain. When a playbook is entered directly:
+Any playbook can be entered directly without going through the full skill chain. When a playbook is entered directly:
 
 0. If SESH.md does not exist, check git history (`git show HEAD:SESH.md`). If recoverable, restore it and notify: "SESH.md was missing but I recovered it from your last commit." If not recoverable (e.g., initial commit with no prior SESH.md, detached HEAD, or repository has no commits yet) -- proceed with creating a fresh SESH.md and backfilling from project artifacts.
 1. Check if SESH.md exists. If not, create it with all section headers.
@@ -110,7 +110,7 @@ Any playbook can be entered directly without going through the full playbook cha
 
 The pattern is: **read the room, backfill SESH.md from whatever exists, flag the gaps, keep moving.**
 
-This means the playbook chain is the recommended path, but not the only path. Someone who already has a PRD can type /build directly — the playbook reads the PRD, backfills SESH.md, and starts building. Someone who just wants to test an existing app can type /test directly — the playbook looks at the codebase and proceeds.
+This means the skill chain is the recommended path, but not the only path. Someone who already has a PRD can type /build directly — the playbook reads the PRD, backfills SESH.md, and starts building. Someone who just wants to test an existing app can type /test directly — the playbook looks at the codebase and proceeds.
 
 ## Re-entry to a completed playbook
 
@@ -124,7 +124,7 @@ When a playbook is invoked on a project where it has already run (its SESH.md se
 
 SESH.md must be committed to git. This means:
 - If the business owner accidentally deletes it, `git checkout SESH.md` recovers it
-- The full history of playbook chain decisions is in version control
+- The full history of skill chain decisions is in version control
 - /build commits SESH.md alongside code changes
 
 STATUS.md is also git-tracked for the same reasons.
@@ -166,13 +166,13 @@ The continuation prompt includes:
 - Where work stopped
 - What's next
 
-**Backward movement:** /wrap can point to a different playbook than the one that just ran. If /test finds bugs, /wrap generates a continuation prompt pointing to /build FIX. After /build fixes them, /wrap points back to /test VERIFY. The playbook chain stays linear — /wrap handles direction changes.
+**Backward movement:** /wrap can point to a different playbook than the one that just ran. If /test finds bugs, /wrap generates a continuation prompt pointing to /build FIX. After /build fixes them, /wrap points back to /test VERIFY. The skill chain stays linear — /wrap handles direction changes.
 
 **SESH.md always takes precedence over continuation context.** If a continuation references state that doesn't match current SESH.md, follow SESH.md.
 
 ## SESH.md accumulation
 
-Each playbook owns its section and only writes to it. This prevents overwrites as the document travels the playbook chain.
+Each playbook owns its section and only writes to it. This prevents overwrites as the document travels the skill chain.
 
 | Playbook | Section | What it writes |
 |-------|---------|----------------|
@@ -256,7 +256,7 @@ The one command the business owner needs to remember.
 
 **No SESH.md found:** "Looks like a new project. Let's start by finding the real problem." Routes to /discover.
 
-**SESH.md exists:** Reads current state, determines playbook chain stage, tells user where they are, suggests next playbook.
+**SESH.md exists:** Reads current state, determines skill chain stage, tells user where they are, suggests next playbook.
 
 **After /wrap:** Reads continuation state, offers to resume where they left off.
 

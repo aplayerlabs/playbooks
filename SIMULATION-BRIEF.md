@@ -2,7 +2,7 @@
 
 ## Your job
 
-Run a complete end-to-end simulation of the A Player Playbooks playbook chain. Play both roles:
+Run a complete end-to-end simulation of the Playbooks skill chain. Play both roles:
 
 - **THE PLAYBOOK:** Follow each playbook's CLAUDE.md spec exactly. Read the file before each stage.
 - **THE BUSINESS OWNER (Marcus):** Give realistic, non-technical responses.
@@ -28,7 +28,7 @@ He wants a simple booking tool where clients can see available slots and book di
 
 Create the project at: `./simulation/` (relative to this file's location — i.e., inside the playbooks repo)
 
-Add `simulation/` to `.gitignore` if it isn't already — simulation output should not pollute the playbook chain repo.
+Add `simulation/` to `.gitignore` if it isn't already — simulation output should not pollute the skill chain repo.
 
 ## The simulation sequence
 
@@ -191,7 +191,7 @@ Check the app:
 - **REAL CODE.** The /build stage writes a real application. Not pseudocode, not descriptions of what would be built. Real files, real components, real logic.
 - Read each playbook's CLAUDE.md BEFORE simulating that stage. Don't improvise — follow the spec.
 - Marcus is non-technical. If the playbook would say something he wouldn't understand, that's a gap.
-- The playbook chain terminology should be used throughout (not "pipeline").
+- The skill chain terminology should be used throughout (not "pipeline").
 - If a playbook's spec is missing guidance for a situation that arises, mark it as a gap even if you can improvise an answer.
 - Keep conversations tight. Don't pad dialogue. Get to the point fast — the code is what matters.
 - For /build, prioritize working code over comprehensive documentation. Ship something real.

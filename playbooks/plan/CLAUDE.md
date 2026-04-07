@@ -1,6 +1,6 @@
 # CLAUDE.md — /plan
 
-> **Authority**: This file is the operating contract for /plan. It defines how Claude Code operates as the strategic stress-testing playbook in the A Player Playbooks playbook chain.
+> **Authority**: This file is the operating contract for /plan. It defines how Claude Code operates as the strategic stress-testing playbook in the Playbooks skill chain.
 
 ---
 

@@ -2,7 +2,7 @@
 set -euo pipefail
 shopt -s nocasematch 2>/dev/null || true
 
-# A Player Playbooks — Setup Script
+# Playbooks — Setup Script
 # Registers all playbooks as Claude Code slash commands via directory symlinks.
 # Idempotent — safe to run multiple times.
 
@@ -27,7 +27,7 @@ PLAYBOOKS=(
 )
 
 echo ""
-echo "  A Player Playbooks — Setup"
+echo "  Playbooks — Setup"
 echo "  ======================="
 echo ""
 
@@ -119,7 +119,7 @@ fi
 echo ""
 
 # --- Playbook chain ---
-echo "  Playbook Chain"
+echo "  Skill Chain"
 echo "  ==========="
 echo ""
 echo "  /playbooks  → Start here (routes to the right playbook)"

@@ -1,4 +1,4 @@
-# A Player Playbooks — Public Release Plan
+# Playbooks — Public Release Plan
 
 ## What this is
 
@@ -11,17 +11,17 @@ The technical-adjacent business owner. Comfortable enough with a computer to fol
 ## Guiding principles
 
 1. **Problem-first.** Whether they arrive with an idea or a problem, they leave /discover with a validated problem.
-2. **Linear playbook chain.** One playbook at a time, in order. No complex routing.
+2. **Linear skill chain.** One playbook at a time, in order. No complex routing.
 3. **Train tracks with guard rails.** The business owner can't go wrong if they follow the sequence.
 4. **/wrap closes every loop.** Need to go back? Wrap, and the continuation prompt points to the right playbook. Re-entry is always clean.
 5. **Plain English always.** Every playbook produces output the business owner can read. Technical artifacts exist underneath for playbook-to-playbook coordination, but the human reads STATUS.md.
 6. **Opinionated defaults.** We choose the stack, the hosting, the structure. The business owner makes product decisions, not technical ones.
-7. **Every playbook stands alone.** The playbook chain is the recommended path, but any playbook can be entered directly. If SESH.md doesn't exist, the playbook creates it. If it does exist, the playbook reads it and continues.
+7. **Every playbook stands alone.** The skill chain is the recommended path, but any playbook can be entered directly. If SESH.md doesn't exist, the playbook creates it. If it does exist, the playbook reads it and continues.
 8. **Everything written new.** Existing APB playbooks are design input. Nothing is copied.
 
 ---
 
-## The playbook chain
+## The skill chain
 
 ```
 /playbooks (front door — reads state, routes to the right playbook)
@@ -37,13 +37,13 @@ The technical-adjacent business owner. Comfortable enough with a computer to fol
 
 ## Shipping schedule
 
-One playbook chain. Built and released in phases based on dependency order:
+One skill chain. Built and released in phases based on dependency order:
 
 | Phase | Playbooks | Why this order |
 |-------|--------|----------------|
 | **Phase A** | Repo architecture, meta-infrastructure, /playbooks, /discover, /plan, /wrap, /status, /upgrade | Foundation + front door + the thinking playbooks. Useful immediately. Validates audience via YouTube. |
 | **Phase B** | /setup, /define, /design | Infrastructure + requirements + visual design. These three prepare everything needed before code is written. |
-| **Phase C** | /build, /test, /launch | The building, breaking, and shipping playbooks. Heaviest lift. Completes the playbook chain. |
+| **Phase C** | /build, /test, /launch | The building, breaking, and shipping playbooks. Heaviest lift. Completes the skill chain. |
 
 Each phase ships when ready. /upgrade delivers new playbooks to existing users.
 
@@ -69,11 +69,11 @@ Each phase ships when ready. /upgrade delivers new playbooks to existing users.
 | # | Task | Detail | Deliverable |
 |---|------|--------|-------------|
 | 2.1 | **Playbook blueprint** | How to build a playbook. Required files (SKILL.md, CLAUDE.md, USAGE.md, SPEC_CHANGELOG.md, SPEC_DECISIONS.md). Required CLAUDE.md sections. Mode design principles. Written for public playbook authors — doubles as "Build Your Own Playbook" guide. Reference: existing `a-player-playbook-blueprint.md`. | `PLAYBOOK-BLUEPRINT.md` |
-| 2.2 | **SESH.md spec** | Playbook-to-playbook handoff contract. Created by whichever playbook is entered first. Updated by every playbook. Structured markers: status (DONE/CONTINUING/BLOCKED/ERROR), blocker format, files changed, next-up. Regex patterns for parsing. Travels the entire playbook chain from first touch. Reference: existing `progress-signaling.md`. | `PROGRESS-SIGNALING.md` + template in `playfield-template/` |
-| 2.3 | **STATUS.md spec** | Plain-English file the business owner reads. Every playbook updates it alongside SESH.md. Contains: project name, current playbook chain stage, what's been decided/built/tested, what's next, blockers in plain language. Later stages add: ship readiness (RED/YELLOW/GREEN), version, deployment status. | Template in `playfield-template/` + spec in `ARCHITECTURE.md` |
+| 2.2 | **SESH.md spec** | Playbook-to-playbook handoff contract. Created by whichever playbook is entered first. Updated by every playbook. Structured markers: status (DONE/CONTINUING/BLOCKED/ERROR), blocker format, files changed, next-up. Regex patterns for parsing. Travels the entire skill chain from first touch. Reference: existing `progress-signaling.md`. | `PROGRESS-SIGNALING.md` + template in `playfield-template/` |
+| 2.3 | **STATUS.md spec** | Plain-English file the business owner reads. Every playbook updates it alongside SESH.md. Contains: project name, current skill chain stage, what's been decided/built/tested, what's next, blockers in plain language. Later stages add: ship readiness (RED/YELLOW/GREEN), version, deployment status. | Template in `playfield-template/` + spec in `ARCHITECTURE.md` |
 | 2.4 | **Handoff protocol** | How each playbook hands forward via SESH.md. How /wrap generates continuation prompts. Rules for backward re-entry (wrap, change the playbook name, paste). | Section in `ARCHITECTURE.md` |
-| 2.5 | **Direct entry protocol** | What happens when someone enters a playbook directly without going through the playbook chain. Every playbook checks: does SESH.md exist? If yes, read it and continue. If no, create it. Does the playbook have what it needs from prior stages? If no, tell the user what's missing and suggest which playbook to run first — but don't block them. | Section in `ARCHITECTURE.md` |
-| 2.6 | **SESH.md accumulation spec** | What each playbook writes into SESH.md so nothing gets lost or overwritten as the document travels the playbook chain. Each playbook owns its section. | Section in `ARCHITECTURE.md` |
+| 2.5 | **Direct entry protocol** | What happens when someone enters a playbook directly without going through the skill chain. Every playbook checks: does SESH.md exist? If yes, read it and continue. If no, create it. Does the playbook have what it needs from prior stages? If no, tell the user what's missing and suggest which playbook to run first — but don't block them. | Section in `ARCHITECTURE.md` |
+| 2.6 | **SESH.md accumulation spec** | What each playbook writes into SESH.md so nothing gets lost or overwritten as the document travels the skill chain. Each playbook owns its section. | Section in `ARCHITECTURE.md` |
 | 2.7 | **Config system spec** | User-local config at `~/.apb/config.yaml`. Stores: hosting platform, GitHub username/org, branch strategy, project registry. Created by /setup. Read by /define, /design, /build, /launch. Playbooks that run before /setup don't need it. | Spec in `ARCHITECTURE.md` |
 
 **What each playbook writes to SESH.md:**
@@ -97,7 +97,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 
 *The 8 playbooks, plus the front door and 3 utilities. Written new. Existing APB playbooks are reference only.*
 
-*Every playbook is chain-aware. It knows what comes before and after it. When entered directly without prior playbook chain state, it reads the room — looks for PRDs, deploy configs, running apps, existing docs — backfills SESH.md from whatever exists, flags gaps honestly, and keeps moving. When re-entered on a project where it's already run, it offers to refine, restart, or skip. No playbook blocks because upstream data is missing.*
+*Every playbook is chain-aware. It knows what comes before and after it. When entered directly without prior skill chain state, it reads the room — looks for PRDs, deploy configs, running apps, existing docs — backfills SESH.md from whatever exists, flags gaps honestly, and keeps moving. When re-entered on a project where it's already run, it offers to refine, restart, or skip. No playbook blocks because upstream data is missing.*
 
 ---
 
@@ -108,7 +108,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 | Aspect | Detail |
 |--------|--------|
 | **When** | Anytime. The one command the business owner needs to remember. |
-| **Behavior** | No SESH.md found → "Looks like a new project. Let's start with /discover." Kicks off /discover. SESH.md exists → reads it, determines current playbook chain stage, tells the user where they are in plain English, suggests next playbook. After /wrap → reads continuation state, offers to resume. |
+| **Behavior** | No SESH.md found → "Looks like a new project. Let's start with /discover." Kicks off /discover. SESH.md exists → reads it, determines current skill chain stage, tells the user where they are in plain English, suggests next playbook. After /wrap → reads continuation state, offers to resume. |
 | **Output** | Routes to the appropriate playbook. Updates nothing itself — it's a router, not a worker. |
 | **Edge case** | Multiple projects in different stages → asks which project, or reads cwd to determine. |
 
@@ -198,7 +198,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 | **External steps documentation** | If using Figma: creating account, installing Scripter plugin, pasting code. If using HTML previews: how to open the file in a browser. Clear instructions for each path. |
 | **Why before /build** | Building from a PRD alone risks building the wrong thing visually. The business owner needs to SEE it before code starts. Cheaper to change a mockup than refactor code. |
 | **Without Figma** | Generates HTML/CSS preview pages that open in a browser. Still visual, still reactable, no Figma needed. This is the default path for the everyman. |
-| **Direct entry** | Works standalone. Can design from a description without prior playbook chain state. If SESH.md has PRD context, uses it. |
+| **Direct entry** | Works standalone. Can design from a description without prior skill chain state. If SESH.md has PRD context, uses it. |
 | **Reference** | Designer playbook (DTCG pipeline, Scripter patterns). Also: the need for a non-Figma path is NEW and has no existing reference. |
 | **YouTube** | Episode 5 |
 
@@ -300,9 +300,9 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 | # | Task | Detail | Deliverable |
 |---|------|--------|-------------|
 | 4.1 | **GETTING-STARTED.md** | What is Claude Code, how to install, how to subscribe, what a terminal is, how to type a slash command. Written for someone who has never opened a terminal. | `GETTING-STARTED.md` |
-| 4.2 | **README.md** | What APB is, who it's for, 30-second install, the playbook chain at a glance, link to YouTube. | `README.md` |
+| 4.2 | **README.md** | What APB is, who it's for, 30-second install, the skill chain at a glance, link to YouTube. | `README.md` |
 | 4.3 | **ETHOS.md** | Philosophy: business owners deserve software leverage without learning to code. Problem-first. Thinking before building. Guard rails, not blank canvases. | `ETHOS.md` |
-| 4.4 | **ARCHITECTURE.md** | How playbooks compose. The playbook chain. SESH.md as playbook-to-playbook contract. STATUS.md as human dashboard. Composition, handoff, direct entry, and accumulation specs. Config system. | `ARCHITECTURE.md` |
+| 4.4 | **ARCHITECTURE.md** | How playbooks compose. The skill chain. SESH.md as playbook-to-playbook contract. STATUS.md as human dashboard. Composition, handoff, direct entry, and accumulation specs. Config system. | `ARCHITECTURE.md` |
 | 4.5 | **PLAYBOOK-BLUEPRINT.md** | How to build your own playbook. Required files, sections, mode design. The "extend APB" guide. | `PLAYBOOK-BLUEPRINT.md` |
 | 4.6 | **SECURITY.md** | Secrets (.env), auth patterns, HTTPS, data privacy. For business owners, not engineers. | `SECURITY.md` |
 | 4.7 | **Example walkthrough** | Complete end-to-end: real problem → every playbook → live app. Shows every STATUS.md, every handoff, every /wrap. | `examples/full-walkthrough/` |
@@ -338,15 +338,15 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 |---|------|--------------|
 | 6.1 | **Fresh install** | Clone, setup, all commands register. Under 60 seconds. |
 | 6.2 | **Front door routing** | /playbooks with no state → starts /discover. With existing state → routes to correct playbook. After /wrap → offers resume. |
-| 6.3 | **Full playbook chain** | Real project through all 8 playbooks. App is live at the end. SESH.md accumulates correctly. STATUS.md readable at every stage. |
-| 6.4 | **Direct entry (every playbook)** | Enter each playbook directly without prior playbook chain state. Each handles missing SESH.md gracefully — creates it, tells user what's missing from prior stages, doesn't block. |
-| 6.5 | **Non-technical user** | Someone who doesn't code follows Getting Started + YouTube, completes the playbook chain. Note every confusion. Fix. |
+| 6.3 | **Full skill chain** | Real project through all 8 playbooks. App is live at the end. SESH.md accumulates correctly. STATUS.md readable at every stage. |
+| 6.4 | **Direct entry (every playbook)** | Enter each playbook directly without prior skill chain state. Each handles missing SESH.md gracefully — creates it, tells user what's missing from prior stages, doesn't block. |
+| 6.5 | **Non-technical user** | Someone who doesn't code follows Getting Started + YouTube, completes the skill chain. Note every confusion. Fix. |
 | 6.6 | **Wrap/re-entry** | /wrap at every stage. Continuation prompt names correct playbook. New session picks up cleanly. Backward re-entry works (test→build→test). |
 | 6.7 | **/status at every stage** | Correctly reads state. Plain English. Suggests next playbook. |
 | 6.8 | **Platform validation** | /setup and /launch work on Render AND Vercel. |
 | 6.9 | **Multi-session /build** | 5+ sessions with /wrap. Context preserved. STATUS.md tracks progress. |
 | 6.10 | **/upgrade** | Push update, run /upgrade, new content available. |
-| 6.11 | **SESH.md accumulation** | After full playbook chain, SESH.md has all 8 playbook sections populated. No section overwrites another. |
+| 6.11 | **SESH.md accumulation** | After full skill chain, SESH.md has all 8 playbook sections populated. No section overwrites another. |
 | 6.12 | **External steps documentation** | /setup and /design external steps (creating accounts, installing plugins) are clear enough for a non-technical user to follow without help. |
 
 ---

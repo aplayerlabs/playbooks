@@ -4,7 +4,7 @@ This guide assumes you've never used a terminal before. That's fine. You'll be u
 
 ## Step 1: Get Claude Code
 
-A Player Playbooks runs inside Claude Code, an AI tool made by Anthropic.
+Playbooks runs inside Claude Code, an AI tool made by Anthropic.
 
 ### Option A: Desktop app (easiest)
 
@@ -31,7 +31,7 @@ Claude Code requires a subscription. You'll need one of:
 
 Sign up at [claude.ai](https://claude.ai) if you haven't already.
 
-## Step 3: Install A Player Playbooks
+## Step 3: Install Playbooks
 
 Open Claude Code (the desktop app or terminal) and type:
 
@@ -39,7 +39,7 @@ Open Claude Code (the desktop app or terminal) and type:
 ! git clone https://github.com/aplayerlabs/playbooks.git ~/.claude/skills/playbooks && cd ~/.claude/skills/playbooks && ./setup
 ```
 
-The `!` at the start tells Claude Code to run this as a system command. It downloads A Player Playbooks and sets everything up.
+The `!` at the start tells Claude Code to run this as a system command. It downloads Playbooks and sets everything up.
 
 If you see an error about "git" not being found, go to [git-scm.com](https://git-scm.com) and install Git first, then try again.
 
@@ -110,4 +110,4 @@ That's it. The system reads your project state and tells you where you left off 
 
 - [YouTube series](#) — watch the whole pipeline in action
 - [GitHub Issues](https://github.com/aplayerlabs/playbooks/issues) — report bugs or ask questions
-- [A Player Labs](https://aplayerlabs.com) — the team behind A Player Playbooks
+- [A Player Labs](https://aplayerlabs.com) — the team behind Playbooks

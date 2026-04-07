@@ -1,6 +1,6 @@
 # Contributing
 
-How to contribute to A Player Playbooks.
+How to contribute to Playbooks.
 
 ## How to contribute
 

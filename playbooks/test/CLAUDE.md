@@ -1,6 +1,6 @@
 # CLAUDE.md — /test
 
-> **Authority**: This file is the operating contract for /test. It defines how Claude Code operates as the testing playbook in the A Player Playbooks pipeline. Project working state lives in the project's SESH.md and STATUS.md, not here.
+> **Authority**: This file is the operating contract for /test. It defines how Claude Code operates as the testing playbook in the Playbooks pipeline. Project working state lives in the project's SESH.md and STATUS.md, not here.
 
 ---
 
