@@ -1,4 +1,4 @@
-## What playbook does this affect?
+## What skill does this affect?
 <!-- e.g., /build, /test, /design, or "meta docs" -->
 
 ## What changed?
@@ -15,7 +15,7 @@
 - [ ] Re-entry protocol handles populated section
 - [ ] Auto-wrap trigger present
 - [ ] Refusal conditions explicit
-- [ ] Boundaries explicit (what this playbook does NOT do)
+- [ ] Boundaries explicit (what this skill does NOT do)
 - [ ] No jargon a business owner wouldn't understand
 
 ## Testing

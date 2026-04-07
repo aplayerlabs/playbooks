@@ -18,11 +18,11 @@ The real bottleneck isn't code — it's the invisible expertise trapped in the b
 
 **Guard rails, not blank canvases.** A blank canvas is terrifying if you don't know what you're doing. Playbooks is opinionated. It chooses the framework. It chooses the hosting. It chooses the database. You make the product decisions — what it does, who it's for, what it looks like. The playbooks handle the how.
 
-**Train tracks, not choose-your-own-adventure.** The skill chain is linear. One playbook at a time, in order. You can't accidentally skip a step. You can't get lost. If you need to go back, /wrap captures your state and points you to the right playbook. The track keeps you moving.
+**Train tracks, not choose-your-own-adventure.** The skill chain is linear. One skill at a time, in order. You can't accidentally skip a step. You can't get lost. If you need to go back, /wrap captures your state and points you to the right skill. The track keeps you moving.
 
 **Plain English, always.** Every playbook produces a summary you can read without technical knowledge. STATUS.md tells you where you are, what's done, and what's next — in sentences, not code. The technical artifacts exist underneath for the playbooks to coordinate. You never need to read them.
 
-**Every playbook stands alone.** The skill chain is the recommended path. But if you know what you need, you can call any playbook directly. /test works without /build. /design works without /define. The playbooks are smart enough to figure out what's missing and tell you.
+**Every skill stands alone.** The skill chain is the recommended path. But if you know what you need, you can call any skill directly. /test works without /build. /design works without /define. The skills are smart enough to figure out what's missing and tell you.
 
 **First pancake mindset.** v1 will be clunky. That's iteration, not failure. If the first version is 50% better than doing it manually, that's already a win. The skill of building playbooks compounds — by the tenth playbook you're cranking them out. Set expectations accordingly: the first one teaches you, the second one is faster, the fifth one is second nature.
 
@@ -36,7 +36,7 @@ If you're a developer, you don't need guard rails — you need sharper tools. Lo
 
 If you want to learn to code, this isn't a teaching tool. It's a building tool. You'll ship software without understanding how it works underneath. That's the point.
 
-If you want pixel-perfect custom design, the /design playbook will get you far, but it's not a replacement for a design team on a complex product.
+If you want pixel-perfect custom design, the /design skill will get you far, but it's not a replacement for a design team on a complex product.
 
 ## Who this is for
 

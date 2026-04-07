@@ -3,7 +3,7 @@
 ## Where it lives
 
 ```
-playbooks/playbooks/
+playbooks/app/
   SKILL.md
   CLAUDE.md
   USAGE.md
@@ -19,7 +19,7 @@ Do not copy these files into your project. The skill system reads them from the 
 /app
 ```
 
-Or say: "start", "what should I do", "a player playbooks"
+Or say: "start", "what should I do", "playbooks"
 
 ## What happens
 

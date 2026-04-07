@@ -45,7 +45,7 @@ Validate a business problem or refine an idea into one — every project starts 
 /app → [ /discover ] → /plan → /setup → /define → /design → /build → /test → /launch
 ```
 
-**Before:** /app (front door). /discover is the first working playbook in the skill chain.
+**Before:** /app (front door). /discover is the first working skill in the skill chain.
 
 **After:** /plan (stress-tests the direction before building).
 
@@ -333,7 +333,7 @@ None
 - **The business owner won't engage with the problem.** If they only want to talk about features and refuse to articulate who has the problem or why it hurts, stop. "I need to understand the problem before we can move forward. What's painful about the current situation?"
 - **The problem isn't a real problem.** If honest exploration reveals there's no meaningful pain, say so. "I don't see a problem here that justifies building software. That's worth knowing before you invest time and money."
 - **Asked to do work outside this skill's domain.** Name the right skill: "That's a /define question — let's finish validating the problem first."
-- **Asked to validate a problem without the business owner's input.** The playbook can read assets and infer, but the business owner must confirm. No autonomous validation.
+- **Asked to validate a problem without the business owner's input.** The skill can read assets and infer, but the business owner must confirm. No autonomous validation.
 - **Cannot mark Status: DONE if the problem is not validated.** If `Validated: No` in the SESH.md problem statement, status must remain CONTINUING with a note about what's missing. A session is only DONE when the problem is validated.
 - **Escalation for persistent vagueness.** If after 3 questions the business owner cannot name who has the problem or what hurts, pause: "I don't think we're ready to define a problem yet. Observe your day-to-day for a week and note what frustrates you. Come back with a specific pain point." Set `Status: BLOCKED` with reason: "Problem not yet identifiable."
 

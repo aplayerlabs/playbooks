@@ -17,7 +17,7 @@ Skills are not code. They're operating contracts. They define what the AI should
 
 ## How playbooks are designed
 
-Every playbook in Playbooks was designed by running the domain through six lenses from Gary Klein's Recognition-Primed Decision Making (RPM) model. When you build your own playbook, use them to extract the expertise that makes it smart — not just the steps, but the thinking behind the steps.
+Every skill in Playbooks was designed by running the domain through six lenses from Gary Klein's Recognition-Primed Decision Making (RPM) model. When you build your own skill, use them to extract the expertise that makes it smart — not just the steps, but the thinking behind the steps.
 
 ### The six lenses
 
@@ -39,15 +39,15 @@ Every playbook in Playbooks was designed by running the domain through six lense
 | Cognitive Tasks | **Operating modes** — distinct thinking patterns for different situations |
 | Instructional Design | **STATUS.md updates** — how the playbook communicates with the business owner |
 
-The lenses are an extraction tool. Sit with the domain expert (or be the domain expert) and work through each lens. The answers become the playbook's CLAUDE.md. Skip the lenses and you get a playbook that follows steps. Use them and you get a playbook that thinks.
+The lenses are an extraction tool. Sit with the domain expert (or be the domain expert) and work through each lens. The answers become the skill's CLAUDE.md. Skip the lenses and you get a playbook that follows steps. Use them and you get a playbook that thinks.
 
 ## Required files
 
-Every playbook lives in `playbooks/{playbook-name}/` and contains:
+Every skill lives in `playbooks/{playbook-name}/` and contains:
 
 ```
 playbooks/my-playbook/
-  SKILL.md              ← Registers the playbook as a slash command
+  SKILL.md              ← Registers the skill as a slash command
   CLAUDE.md             ← The operating contract
   USAGE.md              ← How to invoke it
   SPEC_CHANGELOG.md     ← Version history
@@ -57,7 +57,7 @@ playbooks/my-playbook/
 
 ## SKILL.md
 
-Registers the playbook as a Claude Code slash command. See [SKILL-FORMAT.md](SKILL-FORMAT.md) for the full frontmatter spec.
+Registers the skill as a Claude Code slash command. See [SKILL-FORMAT.md](SKILL-FORMAT.md) for the full frontmatter spec.
 
 ```yaml
 ---
@@ -76,14 +76,14 @@ allowed-tools:
 ---
 ```
 
-Below the frontmatter, include the skill content — typically instructions to read and follow the playbook's CLAUDE.md.
+Below the frontmatter, include the skill content — typically instructions to read and follow the skill's CLAUDE.md.
 
 ## CLAUDE.md — the operating contract
 
-This is the playbook. Everything else is supporting material. Required sections:
+This is the skill spec. Everything else is supporting material. Required sections:
 
 ### 1. Role
-One sentence. What this playbook does.
+One sentence. What this skill does.
 
 ```markdown
 ## Role
@@ -91,7 +91,7 @@ Build the application from the product requirements document.
 ```
 
 ### 2. Mindset
-3-5 bullets. How this playbook thinks. What it values. What it refuses to compromise on.
+3-5 bullets. How this skill thinks. What it values. What it refuses to compromise on.
 
 ```markdown
 ## Mindset
@@ -123,7 +123,7 @@ Mode design principles:
 - Distinct behaviors. If two modes feel similar, merge them.
 
 ### 4. Session start protocol
-What the playbook reads when it starts a session.
+What the skill reads when it starts a session.
 
 ```markdown
 ## Session Start
@@ -153,7 +153,7 @@ What happens when this playbook has already run on this project (its SESH.md sec
 ### 5. Domain-specific sections
 The meat of the playbook. Rules, responsibilities, heuristics. Whatever the playbook needs to do its job. This varies entirely by playbook.
 
-### 6. What this playbook does NOT do
+### 6. What this skill does NOT do
 Explicit boundaries. Prevents scope creep.
 
 ```markdown
@@ -200,16 +200,16 @@ Ship working software, not perfect software.
 
 ## USAGE.md
 
-How to invoke the playbook. Include:
+How to invoke the skill. Include:
 
 - Where the playbook lives (don't copy it into projects)
 - How to start a session (one example per mode)
-- What goes where (which files live in the playbook folder vs the project)
-- How this playbook works with other playbooks in the pipeline
+- What goes where (which files live in the skill folder vs the project)
+- How this skill works with other playbooks in the pipeline
 
 ## SPEC_CHANGELOG.md
 
-Track changes to the playbook spec itself (not project changes).
+Track changes to the skill spec itself (not project changes).
 
 ```markdown
 # Spec Changelog
@@ -222,7 +222,7 @@ Track changes to the playbook spec itself (not project changes).
 
 ## SPEC_DECISIONS.md
 
-Why the rules exist. Decisions that shaped the playbook's design.
+Why the rules exist. Decisions that shaped the skill's design.
 
 ```markdown
 # Spec Decisions
@@ -233,11 +233,11 @@ Why the rules exist. Decisions that shaped the playbook's design.
 **Why:** Different permission levels. BOOTSTRAP scaffolds (destructive if re-run). BUILD is autonomous. FIX is targeted. Mixing them risks accidental scaffolding during a bug fix.
 ```
 
-Use a unique prefix per playbook (BD for build, TD for test, DD for design, etc.).
+Use a unique prefix per skill (BD for build, TD for test, DD for design, etc.).
 
 ## Playbooks (optional)
 
-Reusable patterns specific to this playbook. Stored in the playbook folder, not in projects.
+Reusable patterns specific to this skill. Stored in the skill folder, not in projects.
 
 ```
 playbooks/build/playbooks/
@@ -269,7 +269,7 @@ Every skill must handle being entered directly (not through the pipeline):
 
 ## Checklist
 
-Before shipping a playbook:
+Before shipping a skill:
 
 **Files:**
 - [ ] SKILL.md has valid frontmatter

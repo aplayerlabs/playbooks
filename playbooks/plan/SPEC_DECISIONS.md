@@ -4,7 +4,7 @@
 
 **Date:** 2026-04-06
 **Decision:** Embed Premortem, Inversion, Bottleneck/Mitigation, and Optionality as internal processes within /plan rather than exposing them as standalone slash commands.
-**Why:** The business owner audience doesn't need to know about or manage four separate thinking frameworks. They need one command that stress-tests their direction. Internally, /plan runs the tools in a deliberate sequence where each feeds the next — premortem failures inform inversion anti-patterns, both feed the bottleneck tree, and the optionality map uses everything above. Exposing them separately would force the business owner to understand the dependency chain and run them in order. /plan handles that automatically. The standalone skills remain available in the APB skill library for power users or future v2 exposure.
+**Why:** The business owner audience doesn't need to know about or manage four separate thinking frameworks. They need one command that stress-tests their direction. Internally, /plan runs the tools in a deliberate sequence where each feeds the next — premortem failures inform inversion anti-patterns, both feed the bottleneck tree, and the optionality map uses everything above. Exposing them separately would force the business owner to understand the dependency chain and run them in order. /plan handles that automatically. The standalone skills remain available in the Playbooks skill library for power users or future v2 exposure.
 
 ## PD-002: Premortem is the mandatory gate
 

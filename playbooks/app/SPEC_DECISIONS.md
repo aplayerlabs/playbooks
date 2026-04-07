@@ -3,7 +3,7 @@
 ## RD-001: Read-only, no exceptions
 **Date:** 2026-04-06
 **Decision:** The router playbook never writes to SESH.md, STATUS.md, or any project file.
-**Why:** If the router could modify state, it becomes a worker with routing bolted on. That creates ambiguity about what changed and who changed it. Every pipeline playbook trusts that SESH.md reflects the work of the skill that wrote it. A router that writes breaks that trust chain.
+**Why:** If the router could modify state, it becomes a worker with routing bolted on. That creates ambiguity about what changed and who changed it. Every pipeline skill trusts that SESH.md reflects the work of the skill that wrote it. A router that writes breaks that trust chain.
 
 ## RD-002: One mode, not multiple
 **Date:** 2026-04-06

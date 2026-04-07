@@ -4,7 +4,7 @@
 
 Run a complete end-to-end simulation of the Playbooks skill chain. Play both roles:
 
-- **THE PLAYBOOK:** Follow each playbook's CLAUDE.md spec exactly. Read the file before each stage.
+- **THE PLAYBOOK:** Follow each skill's CLAUDE.md spec exactly. Read the file before each stage.
 - **THE BUSINESS OWNER (Marcus):** Give realistic, non-technical responses.
 
 **CRITICAL: This simulation produces REAL CODE.** The /build stage writes a real, working application. When the simulation finishes, the app must run on localhost. Paper-only simulation is worthless.
@@ -32,9 +32,9 @@ Add `simulation/` to `.gitignore` if it isn't already — simulation output shou
 
 ## The simulation sequence
 
-Run every playbook in order. At each stage, produce ALL of the following:
+Run every skill in order. At each stage, produce ALL of the following:
 
-### For each playbook:
+### For each skill:
 
 **1. Read the spec**
 Read `playbooks/{name}/CLAUDE.md` at the path relative to this file's repo root.
@@ -43,10 +43,10 @@ Read `playbooks/{name}/CLAUDE.md` at the path relative to this file's repo root.
 Write out the dialogue between the playbook and Marcus. The playbook follows its spec. Marcus responds realistically. Keep it tight — don't pad conversations. Get to the point.
 
 **3. Show SESH.md updates**
-After each playbook completes, show the EXACT content that would be written to the playbook's owned section in SESH.md. Field by field. Use the SESH.md contract from each playbook's CLAUDE.md.
+After each playbook completes, show the EXACT content that would be written to the playbook's owned section in SESH.md. Field by field. Use the SESH.md contract from each skill's CLAUDE.md.
 
 **4. Show STATUS.md updates**
-Show the EXACT plain-English STATUS.md content. Use the STATUS.md contract from each playbook's CLAUDE.md.
+Show the EXACT plain-English STATUS.md content. Use the STATUS.md contract from each skill's CLAUDE.md.
 
 **5. Write real files**
 From /setup onward, create real project files. From /build onward, write real application code. The app must be runnable on localhost when the simulation finishes.
@@ -60,7 +60,7 @@ If at any point the spec is ambiguous, missing guidance, contradicts itself, or 
 ## Stage-by-stage verification checklist
 
 ### Stage 1: /app (router)
-Spec: `playbooks/playbooks/CLAUDE.md`
+Spec: `playbooks/app/CLAUDE.md`
 - No SESH.md exists → should detect fresh project
 - Should route to /discover
 - Should speak plain English, no jargon
@@ -68,7 +68,7 @@ Spec: `playbooks/playbooks/CLAUDE.md`
 
 ### Stage 2: /discover (validate problem)
 Spec: `playbooks/discover/CLAUDE.md`
-- Should create SESH.md and STATUS.md (first playbook to do so)
+- Should create SESH.md and STATUS.md (first skill to do so)
 - Should ask structured questions (Question Engine phases 1-2: Reality + Outcome)
 - Should run F-I-C diagnostic (Frustration → Impact → Cause)
 - Should classify: Bottleneck vs Strategy Gap

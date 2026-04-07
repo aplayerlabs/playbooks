@@ -3,7 +3,7 @@ set -euo pipefail
 shopt -s nocasematch 2>/dev/null || true
 
 # Playbooks — Setup Script
-# Registers all playbooks as Claude Code slash commands via directory symlinks.
+# Registers all skills as Claude Code slash commands via directory symlinks.
 # Idempotent — safe to run multiple times.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
@@ -112,9 +112,9 @@ done
 
 echo ""
 echo "  ---"
-echo "  Registered: $REGISTERED playbook(s)"
+echo "  Registered: $REGISTERED skill(s)"
 if [ "$FAILED" -gt 0 ]; then
-  echo "  Failed:     $FAILED playbook(s)"
+  echo "  Failed:     $FAILED skill(s)"
 fi
 echo ""
 

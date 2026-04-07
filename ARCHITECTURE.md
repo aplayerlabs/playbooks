@@ -149,7 +149,7 @@ This is a safety net. The user can still /wrap manually at any time.
 
 ## Config is always fresh
 
-Playbooks always read `~/.apb/config.yaml` and `deploy.json` fresh at session start. Never cache config from a previous session. If the business owner re-runs /setup to change hosting platforms, every downstream playbook picks up the change automatically.
+Playbooks always read `~/.apb/config.yaml` and `deploy.json` fresh at session start. Never cache config from a previous session. If the business owner re-runs /setup to change hosting platforms, every downstream skill picks up the change automatically.
 
 ## /wrap and re-entry
 

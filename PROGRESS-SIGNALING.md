@@ -1,10 +1,10 @@
 # Progress Signaling
 
-Standard markers that playbooks write into SESH.md so the pipeline knows what happened, what's next, and whether work is blocked.
+Standard markers that skills write into SESH.md so the skill chain knows what happened, what's next, and whether work is blocked.
 
 ## Required signals
 
-Every playbook writes these at the bottom of SESH.md when finishing or wrapping a session.
+Every skill writes these at the bottom of SESH.md when finishing or wrapping a session.
 
 ### 1. Status signal
 
@@ -14,7 +14,7 @@ Every playbook writes these at the bottom of SESH.md when finishing or wrapping 
 
 | Status | Meaning | What happens next |
 |--------|---------|-------------------|
-| DONE | All work for this playbook complete | Pipeline moves to next playbook |
+| DONE | All work for this playbook complete | Pipeline moves to next skill |
 | CONTINUING | More work remains | Same playbook continues next session |
 | BLOCKED | Cannot proceed without intervention | Pipeline halts, blocker shown |
 | ERROR | Unrecoverable error | Pipeline halts, error shown |
@@ -38,7 +38,7 @@ Checkbox format with task ID and description. If no tasks (e.g., /discover, /pla
 - STATUS.md
 ```
 
-List every file modified. Helps the next playbook understand what was touched.
+List every file modified. Helps the next skill understand what was touched.
 
 ### 4. Next up
 
@@ -52,7 +52,7 @@ Always present. If nothing remains:
 
 ```markdown
 ### Next Up
-None — all work complete. Ready for next playbook in pipeline.
+None — all work complete. Ready for next skill in pipeline.
 ```
 
 ### 5. Blockers
@@ -84,7 +84,7 @@ Regex patterns for programmatic parsing:
 
 ## Done check
 
-A playbook's work is considered complete when BOTH conditions are true:
+A skill's work is considered complete when BOTH conditions are true:
 
 ```
 isDone = (status === "DONE") AND (no items in "Next Up" or "Next Up" says "None")
@@ -92,7 +92,7 @@ isDone = (status === "DONE") AND (no items in "Next Up" or "Next Up" says "None"
 
 This dual check prevents false positives where status says DONE but there's still listed work.
 
-Every playbook must verify this condition before writing `Status: DONE`. If Next Up has items, use `Status: CONTINUING` instead. The diagnostic playbooks (/app and /status) must verify this condition when reading `Status: DONE` — if Next Up has items, flag the contradiction.
+Every skill must verify this condition before writing `Status: DONE`. If Next Up has items, use `Status: CONTINUING` instead. The diagnostic skills (/app and /status) must verify this condition when reading `Status: DONE` — if Next Up has items, flag the contradiction.
 
 ## Anti-patterns
 

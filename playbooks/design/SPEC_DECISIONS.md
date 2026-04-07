@@ -30,7 +30,7 @@ Why the rules exist. Prefix: DD (Design Decisions).
 
 **Decision:** Document the design system (colors, typography, spacing) directly in SESH.md `## Design`, not in a standalone `design-system.md` or `tokens.json`.
 
-**Why:** SESH.md is the playbook-to-playbook contract. /build reads SESH.md. If the design system lives in a separate file, /build needs to know to look for it, and there's no guarantee the file name or location is consistent across projects. Putting it inline in the section /build already reads guarantees it's found. For the Figma path, tokens.json exists as a byproduct of Scripter code generation, but the canonical reference is still SESH.md.
+**Why:** SESH.md is the skill-to-skill contract. /build reads SESH.md. If the design system lives in a separate file, /build needs to know to look for it, and there's no guarantee the file name or location is consistent across projects. Putting it inline in the section /build already reads guarantees it's found. For the Figma path, tokens.json exists as a byproduct of Scripter code generation, but the canonical reference is still SESH.md.
 
 ---
 

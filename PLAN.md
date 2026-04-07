@@ -14,10 +14,10 @@ The technical-adjacent business owner. Comfortable enough with a computer to fol
 2. **Linear skill chain.** One playbook at a time, in order. No complex routing.
 3. **Train tracks with guard rails.** The business owner can't go wrong if they follow the sequence.
 4. **/wrap closes every loop.** Need to go back? Wrap, and the continuation prompt points to the right playbook. Re-entry is always clean.
-5. **Plain English always.** Every playbook produces output the business owner can read. Technical artifacts exist underneath for playbook-to-playbook coordination, but the human reads STATUS.md.
+5. **Plain English always.** Every playbook produces output the business owner can read. Technical artifacts exist underneath for skill-to-skill coordination, but the human reads STATUS.md.
 6. **Opinionated defaults.** We choose the stack, the hosting, the structure. The business owner makes product decisions, not technical ones.
 7. **Every playbook stands alone.** The skill chain is the recommended path, but any playbook can be entered directly. If SESH.md doesn't exist, the playbook creates it. If it does exist, the playbook reads it and continues.
-8. **Everything written new.** Existing APB playbooks are design input. Nothing is copied.
+8. **Everything written new.** Existing Playbooks playbooks are design input. Nothing is copied.
 
 ---
 
@@ -95,7 +95,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 
 # PHASE 3: PIPELINE PLAYBOOKS
 
-*The 8 playbooks, plus the front door and 3 utilities. Written new. Existing APB playbooks are reference only.*
+*The 8 playbooks, plus the front door and 3 utilities. Written new. Existing Playbooks playbooks are reference only.*
 
 *Every playbook is chain-aware. It knows what comes before and after it. When entered directly without prior skill chain state, it reads the room — looks for PRDs, deploy configs, running apps, existing docs — backfills SESH.md from whatever exists, flags gaps honestly, and keeps moving. When re-entered on a project where it's already run, it offers to refine, restart, or skip. No playbook blocks because upstream data is missing.*
 
@@ -300,10 +300,10 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 | # | Task | Detail | Deliverable |
 |---|------|--------|-------------|
 | 4.1 | **GETTING-STARTED.md** | What is Claude Code, how to install, how to subscribe, what a terminal is, how to type a slash command. Written for someone who has never opened a terminal. | `GETTING-STARTED.md` |
-| 4.2 | **README.md** | What APB is, who it's for, 30-second install, the skill chain at a glance, link to YouTube. | `README.md` |
+| 4.2 | **README.md** | What Playbooks is, who it's for, 30-second install, the skill chain at a glance, link to YouTube. | `README.md` |
 | 4.3 | **ETHOS.md** | Philosophy: business owners deserve software leverage without learning to code. Problem-first. Thinking before building. Guard rails, not blank canvases. | `ETHOS.md` |
-| 4.4 | **ARCHITECTURE.md** | How playbooks compose. The skill chain. SESH.md as playbook-to-playbook contract. STATUS.md as human dashboard. Composition, handoff, direct entry, and accumulation specs. Config system. | `ARCHITECTURE.md` |
-| 4.5 | **PLAYBOOK-BLUEPRINT.md** | How to build your own playbook. Required files, sections, mode design. The "extend APB" guide. | `PLAYBOOK-BLUEPRINT.md` |
+| 4.4 | **ARCHITECTURE.md** | How playbooks compose. The skill chain. SESH.md as skill-to-skill contract. STATUS.md as human dashboard. Composition, handoff, direct entry, and accumulation specs. Config system. | `ARCHITECTURE.md` |
+| 4.5 | **PLAYBOOK-BLUEPRINT.md** | How to build your own playbook. Required files, sections, mode design. The "extend Playbooks" guide. | `PLAYBOOK-BLUEPRINT.md` |
 | 4.6 | **SECURITY.md** | Secrets (.env), auth patterns, HTTPS, data privacy. For business owners, not engineers. | `SECURITY.md` |
 | 4.7 | **Example walkthrough** | Complete end-to-end: real problem → every playbook → live app. Shows every STATUS.md, every handoff, every /wrap. | `examples/full-walkthrough/` |
 
@@ -325,7 +325,7 @@ Every playbook also writes the standard progress signaling block (Status, Comple
 | 5.8 | Ep 7: Building Your App (Part 2) | /build BUILD | Multi-session building, /wrap, reading STATUS.md. |
 | 5.9 | Ep 8: Breaking Your App (On Purpose) | /test | Finding bugs, executive summary, loop to /build FIX. |
 | 5.10 | Ep 9: Going Live | /launch | Deploy, verify, celebrate. |
-| 5.11 | Ep 10: Build Your Own Playbook | Blueprint | Extending APB with custom playbooks. |
+| 5.11 | Ep 10: Build Your Own Playbook | Blueprint | Extending Playbooks with custom playbooks. |
 | 5.12 | Episode scripts | All | Full script/outline per episode: beats, demos, viewer takeaway. |
 
 ---

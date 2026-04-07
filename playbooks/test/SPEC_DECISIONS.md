@@ -30,11 +30,11 @@
 **Decision:** Track not just what was tested, but confidence level (HIGH/MEDIUM/LOW/UNTESTED) for each feature.
 **Why:** "Tested" is not binary in exploratory testing. There's a difference between "I tried hard to break the login flow and couldn't" (HIGH) and "The login page loaded" (LOW). Without confidence levels, a coverage checklist creates false confidence — everything has a checkmark but half of it was barely glanced at. Confidence levels force /test to be honest about depth.
 
-## TT-006: Playbooks live in the playbook, not in projects
+## TT-006: Plays live in the skill, not in projects
 
 **Date:** 2026-04-06
-**Decision:** Testing playbooks (edge cases, security, performance, accessibility) ship with the playbook, not in individual project folders.
-**Why:** Testing knowledge accumulates across projects. The edge cases that matter for one client's login form matter for every login form. Playbooks are IP that travels with the playbook — reusable patterns that make every test session more thorough than the last. If they lived in projects, they'd fragment and diverge.
+**Decision:** Testing plays (edge cases, security, performance, accessibility) ship with the skill, not in individual project folders.
+**Why:** Testing knowledge accumulates across projects. The edge cases that matter for one client's login form matter for every login form. Plays are IP that travel with the skill — reusable patterns that make every test session more thorough than the last. If they lived in projects, they'd fragment and diverge.
 
 ## TT-007: No automated test execution
 

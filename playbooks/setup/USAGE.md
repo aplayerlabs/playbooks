@@ -3,7 +3,7 @@
 ## Where it lives
 
 ```
-~/.claude/skills/apb/playbooks/setup/
+~/.claude/skills/playbooks/playbooks/setup/
 ```
 
 Do not copy skill files into projects. /setup reads from the skill folder and writes to your project directory and `~/.apb/`.

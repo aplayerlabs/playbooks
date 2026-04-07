@@ -7,7 +7,7 @@
 This skill lives in the Playbooks skill pack:
 
 ```
-~/.claude/skills/apb/playbooks/build/
+~/.claude/skills/playbooks/playbooks/build/
 ```
 
 Do not copy it into project folders. It stays here and gets invoked via slash command.
@@ -60,7 +60,7 @@ Reads bugs/open.md, prioritizes by severity, fixes them. Targeted mode — no ne
 
 | Location | Contains | In the project repo? |
 |----------|----------|---------------------|
-| `~/.claude/skills/apb/playbooks/build/` | The playbook's operating contract | Never — this is the machine |
+| `~/.claude/skills/playbooks/playbooks/build/` | The playbook's operating contract | Never — this is the machine |
 | `~/your-project/` | App code, tasks, bugs, docs, SESH.md, STATUS.md | Yes — this is the deliverable |
 
 ---

@@ -8,7 +8,7 @@ The front door, the thinking pipeline, and utilities. Useful immediately.
 - [x] Repo structure and skeleton
 - [x] Foundation docs (README, ETHOS, ARCHITECTURE, PLAYBOOK-BLUEPRINT, SECURITY, GETTING-STARTED)
 - [x] Spec docs (SKILL-FORMAT, PROGRESS-SIGNALING)
-- [x] Project templates (SESH.md, STATUS.md)
+- [x] Playfield templates (SESH.md, STATUS.md)
 - [x] Playbook stubs with frontmatter (all 11)
 - [ ] Setup script (functional install + slash command registration)
 - [ ] /app CLAUDE.md (front door router)
@@ -21,7 +21,7 @@ The front door, the thinking pipeline, and utilities. Useful immediately.
 - [ ] Quality gate: discover → plan pipeline test
 - [ ] Quality gate: wrap/re-entry validation
 - [ ] Quality gate: /status at every stage
-- [ ] Quality gate: direct entry (every Phase A playbook)
+- [ ] Quality gate: direct entry (every Phase A skill)
 - [ ] YouTube Ep 0: Getting Started (script)
 - [ ] YouTube Ep 1: Finding the Real Problem (script)
 - [ ] YouTube Ep 2: Stress-Testing Before You Build (script)
@@ -41,7 +41,7 @@ Infrastructure, requirements, and visual validation. Prepares everything before 
 - [ ] STATUS.md extension (build/test/launch fields)
 - [ ] Quality gate: setup → define → design pipeline test
 - [ ] Quality gate: platform validation (Render + Vercel)
-- [ ] Quality gate: direct entry (every Phase B playbook)
+- [ ] Quality gate: direct entry (every Phase B skill)
 - [ ] YouTube Ep 3: Setting Up Your Infrastructure (script)
 - [ ] YouTube Ep 4: Writing the Blueprint (script)
 - [ ] YouTube Ep 5: Designing What You'll Build (script)
@@ -62,7 +62,7 @@ The building, breaking, and shipping playbooks. Completes the pipeline.
 - [ ] /launch Vercel integration
 - [ ] SECURITY.md refinement based on /build patterns
 - [ ] Full example walkthrough (problem → live app)
-- [ ] Quality gate: end-to-end pipeline test (all 8 playbooks)
+- [ ] Quality gate: end-to-end pipeline test (all 8 skills)
 - [ ] Quality gate: non-technical user full pipeline test
 - [ ] Quality gate: multi-session /build (5+ sessions)
 - [ ] Quality gate: test → build → test loop
@@ -77,8 +77,8 @@ The building, breaking, and shipping playbooks. Completes the pipeline.
 
 ## Future (v2+)
 
-- Animator playbook (motion polish)
-- Capturer playbook (design state capture)
+- Animator skill (motion polish)
+- Capturer skill (design state capture)
 - Standalone thinking skills (/premortem, /inversion, /bottleneck, /optionality, /delegate, /document)
 - Multi-host support (Codex, Cursor)
 - Community playbook marketplace

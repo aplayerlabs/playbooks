@@ -3,7 +3,7 @@
 ## Where it lives
 
 ```
-~/.claude/skills/apb/playbooks/plan/
+~/.claude/skills/playbooks/playbooks/plan/
 ```
 
 Do not copy skill files into your project. The skill reads your project directory — it lives in the skill pack.

@@ -53,7 +53,7 @@ Type:
 /app
 ```
 
-That's it. The playbook will ask you about your problem or idea and guide you from there.
+That's it. It will ask you about your problem or idea and guide you from there.
 
 ## What you'll need along the way
 
@@ -69,14 +69,14 @@ You don't need any of these right now. /setup handles it when the time comes.
 
 | Command | What it does |
 |---------|-------------|
-| `/app` | Start here. Routes you to the right playbook. |
+| `/app` | Start here. Routes you to the right skill. |
 | `/wrap` | Pause your session. Pick up later exactly where you left off. |
 | `/status` | See where you are in the pipeline and what's next. |
 | `/upgrade` | Get the latest playbooks and improvements. |
 
 ## The pipeline
 
-Your project will move through these playbooks in order:
+Your project will move through these skills in order:
 
 1. **/discover** — Find the real problem
 2. **/plan** — Stress-test the direction
@@ -93,8 +93,8 @@ You don't need to memorize these. `/app` always knows where you are and what's n
 
 - **You can stop anytime.** Type `/wrap` and your progress is saved. Come back tomorrow, next week, whenever.
 - **Plain English.** Check STATUS.md in your project folder (the playfield) to see where things stand. It's written for you, not for programmers.
-- **Ask questions.** Every playbook is conversational. If something doesn't make sense, say so. The playbook will explain.
-- **Trust the order.** The pipeline exists so you don't skip steps. Each playbook builds on what the previous one produced.
+- **Ask questions.** Every skill is conversational. If something doesn't make sense, say so. The skill will explain.
+- **Trust the order.** The pipeline exists so you don't skip steps. Each skill builds on what the previous one produced.
 
 ## How to resume
 
@@ -108,6 +108,6 @@ That's it. The system reads your project state and tells you where you left off 
 
 ## Need help?
 
-- [YouTube series](#) — watch the whole pipeline in action
+- YouTube series — coming soon
 - [GitHub Issues](https://github.com/aplayerlabs/playbooks/issues) — report bugs or ask questions
 - [A Player Labs](https://aplayerlabs.com) — the team behind Playbooks

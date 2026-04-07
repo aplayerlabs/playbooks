@@ -42,7 +42,7 @@ Read the project state and route the business owner to the right skill in the pi
 
 Read the project state and guide the user to the right skill. This skill has one job and one mode.
 
-**Trigger:** User types /app or any voice trigger ("start", "what should I do", "a player playbooks").
+**Trigger:** User types /app or any voice trigger ("start", "what should I do", "playbooks").
 
 **Permissions:** Read only. This skill reads SESH.md, STATUS.md, and scans the project directory. It writes nothing.
 

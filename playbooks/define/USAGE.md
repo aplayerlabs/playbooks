@@ -3,7 +3,7 @@
 ## Where it lives
 
 ```
-~/.claude/skills/apb/playbooks/define/
+~/.claude/skills/playbooks/playbooks/define/
 ```
 
 Do not copy skill files into projects. /define reads from the skill folder and writes to your project directory.
