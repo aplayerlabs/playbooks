@@ -36,7 +36,7 @@ Sign up at [claude.ai](https://claude.ai) if you haven't already.
 Open Claude Code (the desktop app or terminal) and type:
 
 ```
-! git clone https://github.com/aplayerlabs/aplayerbrains.git ~/.claude/skills/playbooks && cd ~/.claude/skills/playbooks && ./setup
+! git clone https://github.com/aplayerlabs/playbooks.git ~/.claude/skills/playbooks && cd ~/.claude/skills/playbooks && ./setup
 ```
 
 The `!` at the start tells Claude Code to run this as a system command. It downloads A Player Playbooks and sets everything up.
@@ -109,5 +109,5 @@ That's it. The system reads your project state and tells you where you left off 
 ## Need help?
 
 - [YouTube series](#) — watch the whole pipeline in action
-- [GitHub Issues](https://github.com/aplayerlabs/aplayerbrains/issues) — report bugs or ask questions
+- [GitHub Issues](https://github.com/aplayerlabs/playbooks/issues) — report bugs or ask questions
 - [A Player Labs](https://aplayerlabs.com) — the team behind A Player Playbooks

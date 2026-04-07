@@ -37,7 +37,7 @@ At any point, type `/wrap` to pause and pick up later. Type `/status` to see whe
 ## Install
 
 ```bash
-git clone https://github.com/aplayerlabs/aplayerbrains.git ~/.claude/skills/playbooks
+git clone https://github.com/aplayerlabs/playbooks.git ~/.claude/skills/playbooks
 cd ~/.claude/skills/playbooks && ./setup
 ```
 
