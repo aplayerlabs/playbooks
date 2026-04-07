@@ -4,6 +4,8 @@ Encode what your experts know into AI skill chains that anyone can run.
 
 Playbooks is a framework for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that turns expert knowledge — the pattern recognition, judgment calls, and hard-won shortcuts that live in people's heads — into repeatable, structured AI workflows. Each playbook is a chain of specialist skills that guide a user through a domain, step by step, with the thinking built in.
 
+Playbooks is the **build** stage of [A Player OS](https://github.com/aplayerlabs/os): **Playbooks** (build) → **Operatives** (run) → **Debriefs** (learn) → **Assets** (compound).
+
 ## The structure
 
 Every playbook follows the same architecture:
