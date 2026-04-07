@@ -1,26 +1,26 @@
 # Playbooks
 
-Turn a business problem into a working application — without writing code.
+Encode what your experts know into AI skill chains that anyone can run.
 
-Playbooks is a skill pack for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that guides you from "I have a problem" to "my app is live" through a single playbook — eight specialist skills, in order, each one handing off to the next.
+Playbooks is a framework for [Claude Code](https://docs.anthropic.com/en/docs/claude-code) that turns expert knowledge — the pattern recognition, judgment calls, and hard-won shortcuts that live in people's heads — into repeatable, structured AI workflows. Each playbook is a chain of specialist skills that guide a user through a domain, step by step, with the thinking built in.
 
-## Who this is for
+## The structure
 
-Business owners who have a problem they want software to solve — or an idea they want to test. You're comfortable with a computer. You've never written code. You don't need to.
+Every playbook follows the same architecture:
 
-## How it's structured
+- **Playbook** — the complete workflow. One playbook per domain. It threads skills together into a coherent process.
+- **Skills** — the specialist steps in the chain. Each skill is a slash command with a single job: discover, plan, build, test, etc.
+- **Plays** — the moves within each skill. Modes, protocols, heuristics, decision trees — the expertise that makes the skill smart, not just procedural.
+- **Playfield** — the project folder structure that every skill reads from and writes to. The shared surface where all work happens.
 
-**One playbook. Eight skills. Each skill contains plays.**
+## What ships with this repo
 
-- The **playbook** is the whole thing — the end-to-end system that takes you from problem to live app.
-- **Skills** are the eight specialist steps that chain together. Each skill is a slash command.
-- **Plays** are the steps and moves within each skill — the modes, protocols, and decision trees.
-- The **playfield** is the project folder structure that every skill reads from and writes to.
+A complete **problem-to-app playbook** — eight skills that take a non-technical business owner from "I have a problem" to "my app is live." This is the proof of concept. It demonstrates the full architecture: skill chaining, handoff state, session persistence, the playfield, and the plays that encode real builder expertise.
 
-## The skill chain
+### The included skill chain
 
 ```
-/playbooks    Start here. Reads your project state and tells you what to do next.
+/playbooks    Start here. Reads your project state and routes you to the right skill.
       |
 /discover         Validate your problem (or refine your idea into one)
       |
@@ -39,7 +39,17 @@ Business owners who have a problem they want software to solve — or an idea th
 /launch           Deploy. Your app is live.
 ```
 
-At any point, type `/wrap` to pause and pick up later. Type `/status` to see where you are. After launch, re-enter the playbook at any skill to add features, fix bugs, or ship updates.
+Utilities: `/wrap` (pause and resume), `/status` (where am I?), `/upgrade` (get latest).
+
+This is one playbook. Your playbook would have different skills, in a different order, for a different domain.
+
+## Build your own
+
+The included playbook is an example. The real product is the framework.
+
+A consulting firm could build a playbook that encodes their methodology — intake, diagnosis, recommendation, delivery. A manufacturer could build one for quality audits. An agency could build one for client onboarding. Whatever your experts do repeatedly, a playbook can encode it.
+
+See [PLAYBOOK-BLUEPRINT.md](PLAYBOOK-BLUEPRINT.md) for how to create skills that plug into the framework.
 
 ## Install
 
@@ -54,34 +64,24 @@ Then open Claude Code and type `/playbooks`.
 
 Every skill operates on the **playfield** — your project folder. It starts with two files:
 
-- **STATUS.md** — for you. Plain English. Where you are, what's done, what's next.
+- **STATUS.md** — for the human. Plain English. Where you are, what's done, what's next.
 - **SESH.md** — for the skills. Structured handoff data so each skill picks up where the last one left off.
 
-When `/build` runs for the first time, it scaffolds the full playfield: tasks, bugs, requirements, roadmap, docs, and your application code. From that point on, every skill knows exactly where to find and file information.
+Skills chain together through SESH.md. Each skill reads it, does its work, writes its section, and hands off to the next. The playfield grows as the project progresses — `/build` scaffolds the full structure (tasks, bugs, requirements, roadmap, docs) on first run.
 
-You read STATUS.md. The skills read SESH.md. The playbook stays on track.
-
-When a session ends, `/wrap` saves your progress and generates a continuation plan. Accept it and you're back to work — no copy-pasting, no lost context.
-
-## YouTube
-
-Each skill maps to an episode. Watch the series to see the full playbook in action.
-
-## Build your own
-
-Playbooks is extensible. See [PLAYBOOK-BLUEPRINT.md](PLAYBOOK-BLUEPRINT.md) for how to create custom skills that plug into the playbook.
+`/wrap` saves progress at any point and generates a continuation plan. Pick up exactly where you left off, even across sessions.
 
 ## Philosophy
 
-See [ETHOS.md](ETHOS.md) for why this exists and who it's for.
+See [ETHOS.md](ETHOS.md) for why this exists.
 
 ## Architecture
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for how the skills work together.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for how skills chain together under the hood.
 
 ## Custom playbooks for your business
 
-Playbooks is the open-source proof of concept. If you want a playbook designed for your specific domain — your expertise, your workflow, your team — [A Player Labs](https://aplayerlabs.com) builds custom playbooks for businesses that want to scale their expertise.
+This repo is the open-source framework. If you want a playbook designed for your specific domain — your expertise, your workflow, your team — [A Player Labs](https://aplayerlabs.com) builds custom playbooks for businesses that want to scale what their experts know.
 
 ## License
 
